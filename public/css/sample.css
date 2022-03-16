@@ -1,0 +1,219 @@
+
+
+/*ホーム専用*/
+ 
+
+
+@media only screen and (min-width: 1000px){
+    
+    /*-----------------ヘッダー設定-------------------*/
+    header{
+        background: #37474F;
+    }
+
+
+    .main-header{
+        width: 1700px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    .header-icon{
+        width: 35px;
+        border-radius: 3px;
+    }
+
+    #header-start{
+        display: flex;
+        align-items: center;
+        padding: 10px 10px;
+    }
+
+    #header-end{
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        color: #fff;
+        font-size: 1.0rem;
+        line-height: 1.4;
+        text-shadow: 1px 1px 3px #000;
+        font-weight: 700;
+        padding: 10px 10px;
+    }
+
+    #title{
+        margin-left: 10px;
+        color: #fff;
+        font-size: 1.0rem;
+        line-height: 1.4;
+        text-shadow: 1px 1px 3px #000;
+        font-weight: 700;
+    }
+
+    /*--------------ナビメニュー---------------------*/
+    #global_nav{
+        background: #37474F;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .global_nav_item_wrapper{
+        width: 1700px;
+        display: flex;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.8;
+    }
+
+    .global_nav_item{
+        color: #fff;
+        opacity: .6;
+        padding: 8px 16px;
+        position: relative;
+        white-space: nowrap;
+    }
+
+    body { 
+        font-family: Hiragino Kaku Gothic Pro,"ヒラギノ角ゴ Pro W3",Meiryo,"メイリオ",Meiryo,"メイリオ",Osaka,MS PGothic,arial,helvetica,sans-serif;
+        line-height: 1.6;
+        font-size: 13px;
+        background: #F2F2F2; 
+    }
+
+    /*--------------全体設定-----------------*/
+    .main_content_wrap{
+        margin: 0 auto;
+        max-width: 1020px;
+        display: flex;
+    }
+
+
+
+    /*-----------投稿カード設定-------------*/
+
+    .username_data{
+        display: flex;
+    }
+
+    .post-info{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .char_wrap{
+        display: flex;
+    }
+
+    
+    .post_section_wrap{
+        width: 700px;
+        margin-left: 30px;
+    }
+
+    .post_section{
+        padding: 14px 14px;
+        background-color: #fff;
+        margin: 10px 0;
+    }
+
+    .created_data_p{
+        color: rgba(0,0,0,0.6);
+        font-size: 14px;
+        margin-left: 4px;
+    }
+
+    .post_title_wrap{
+        margin: 5px 10px 10px 10px;
+    }
+
+    .post_title_h2{
+        overflow: hidden;
+        font-size: 18px;
+        font-weight: 600;
+        color: rgba(0,0,0,0.87);
+        line-height: 1.4;
+    }
+
+    /*------------レシピ設定------------------*/
+
+    .combo_len{
+        background-color: #ededee;
+        margin: 5px 20px 5px 10px;
+        border-radius: 5px;
+    }
+
+    .combo_len_p{
+        /*領域を超えて表示した場合に末尾を(・・・)に変換する設定*/
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        white-space: nowrap;
+        
+        padding: 10px 10px;
+    }
+
+
+
+
+
+
+    /*------------タグ設定------------------*/
+    .post_tag_container{
+        display: flex;
+        
+    }
+
+    .tag_flex_wrap{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 30px 10px 10px
+        
+    }
+
+    .damage{
+        font-size: 12px;
+    }
+
+
+    .post_tag_wrap{
+        
+        margin-right: 7px;
+    }
+
+    .post_tag{
+
+        color: #39739D;
+        font-size: 12px;
+        background-color: #E1ECF4;
+        border-radius: 5px;
+        padding: 1px 3px 0px 3px;
+    }
+
+    .fa-tags{
+        font-size: 16px;
+        color: rgba(0,0,0,0.6);
+        margin: 2px 7px 0 0;
+    }
+
+
+    /*------------フッター設定-------------*/
+    footer {
+        background: rgb(68,68,68);
+        text-align: center;
+        padding: 26px;
+        width: 100%;
+    }
+    
+    footer p {
+        color: white;
+        font-size: 0.8rem;
+    }
+    
+    }
+    
+    
+    
+@media only screen and (max-width: 999px){
+}
