@@ -20,10 +20,9 @@ function selectboxChange() {
     }
 }
 
-
 function OnButtonClickA() {
-    target = document.getElementById("combo_content");
-    target.insertAdjacentHTML("beforeend",'→');
+    target = document.getElementById("combo_content"); //combo_contentのvalueに"a"を追加する関数
+    target.value = target.value + "→";
 }
 function OnButtonClickB() {
     target = document.getElementById("combo_content");
@@ -31,3 +30,6 @@ function OnButtonClickB() {
 }
 
 
+function test(){
+  
+}
