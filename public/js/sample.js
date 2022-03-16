@@ -1,9 +1,9 @@
 function selectboxChange() {
     target = document.getElementById("output");
-    selindex = document.form1.Select1.selectedIndex;
+    selindex = document.getElementById('Select1').selectedIndex;
     switch (selindex) {
       case 1:
-        target.insertAdjacentHTML('beforebegin', '<input type="button" value="Exec" onclick="OnButtonClickA();"/>');
+        target.innerHTML = '<input class="combo_button" type="button" value="→" onclick="OnButtonClickA();"/>';
         break;
       case 2:
         target.innerHTML = '<input type="button" value="Exec" onclick="OnButtonClickA();"/>';
@@ -19,11 +19,16 @@ function selectboxChange() {
         break;
     }
 }
-function OnButtonClickB() {
-    target = document.getElementById("a");
-    target.insertAdjacentHTML("beforeend",'aaa');
-}
+
+
 function OnButtonClickA() {
-    target = document.getElementById("a");
-    target.insertAdjacentHTML("beforeend",'sss');
+    target = document.getElementById("combo_content").value;
+    target += "a";
+    //target.insertAdjacentHTML("beforeend",'→');
 }
+function OnButtonClickB() {
+    target = document.getElementById("combo_content");
+    target.insertAdjacentHTML("beforeend",'');
+}
+
+

@@ -64,13 +64,40 @@
         width: 1700px;
         display: flex;
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 1.8;
     }
 
-    .global_nav_item{
+    .global_nav_item {
+        display: inline-block;
+        padding-bottom: 4px;
+        position: relative;
+      }
+      
+      .global_nav_item::after {
+        background-color: rgb(255, 255, 255);
         color: #fff;
-        opacity: .6;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 3px;
+        left: 0;
+        position: absolute;
+        transition: .5s all;
+        width: 0;
+      }
+      .global_nav_item:hover{
+        color: #fff;
+      }
+      
+      .global_nav_item:hover::after {
+        width: 100%;
+        
+      }
+      
+
+    .global_nav_item{
+        color: rgb(189, 188, 188);
         padding: 8px 16px;
         position: relative;
         white-space: nowrap;
@@ -155,8 +182,40 @@
     }
 
 
+    /*--------フォーム設定---------*/
+    .post_form_section{
+        padding: 14px 14px;
+        background-color: #fff;
+        margin: 10px 0;
+    }
+
+    .post_form_h2{
+        color: #333;
+        padding: 10px 16px 16px;
+        font-size: 22px;
+        font-weight: 700;
+        border-bottom: 1px solid #ebebeb;
+        line-height: 1;
+    }
 
 
+    .post_form_h2::before{
+        display: inline-block;
+        width: 4px;
+        height: 16px;
+        margin-right: 12px;
+        background-color: #1a75ff;
+        border-radius: 2px;
+        content: "";
+    }
+
+
+    .post_form_char{
+        display: flex;
+        justify-content: center;
+        height: 25px;
+        margin: 20px 10px 10px;
+    }
 
 
     /*------------タグ設定------------------*/
@@ -176,9 +235,14 @@
         font-size: 12px;
     }
 
+    #damage_textarea{
+        margin: -3px 10px 0 10px;
+        padding: 1px;
+        width: 100px;
+        height: 30px;
+    }
 
     .post_tag_wrap{
-        
         margin-right: 7px;
     }
 
@@ -210,7 +274,88 @@
         color: white;
         font-size: 0.8rem;
     }
+    /*--------------テキストエリア-----------------*/
+    textarea {
+        padding: 3px!important;
+        resize: none;
+        border: 1px solid rgba(0,0,0,0.3);
+        border-radius: 3px!important;
+    }
+
+    #combo_content{
+        width: 550px;
+        height: 30px;
+    }
+
+    /*--------------ボタン設定--------------------*/
+    .combo_button {
+        text-align: center;
+        width: 100px;
+        color: #fff;
+        border-radius: 5px;
+        background-color: #eb6100;
+        border-bottom: 5px solid #b84c00;
+        -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+      }
+    .combo_button:hover {
+
+        margin-top: 3px;
+        color: #fff;
+        background: #f56500;
+        border-bottom: 2px solid #b84c00;
+    }
+
+    /*----------------セレクトボックス------------------------*/
     
+    .cp_ipselect {
+        overflow: hidden;
+        width: 200px;
+        margin: -3px 30px 0 10px;
+        text-align: center;
+    }
+    .cp_ipselect select {
+        width: 200px;
+        padding-right: 1em;
+        cursor: pointer;
+        text-indent: 0.01px;
+        text-overflow: ellipsis;
+        border: none;
+        outline: none;
+        background: transparent;
+        background-image: none;
+        box-shadow: none;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    .cp_ipselect select::-ms-expand {
+        display: none;
+    }
+    .cp_ipselect.cp_sl01 {
+        position: relative;
+        border: 1px solid #bbbbbb;
+        border-radius: 2px;
+        background: #ffffff;
+    }
+    .cp_ipselect.cp_sl01::before {
+        position: absolute;
+        top: 0.8em;
+        right: 0.9em;
+        width: 0;
+        height: 0;
+        padding: 0;
+        content: '';
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #666666;
+        pointer-events: none;
+    }
+    .cp_ipselect.cp_sl01 select {
+        padding: 8px 38px 8px 8px;
+        color: #666666;
+    }
+
+
     }
     
     
