@@ -10,10 +10,10 @@ class Post extends Model
     use HasFactory;
     protected $table = 'posts';
 
-    //可変項目
+    //可変項目 ここにテーブルのカラムを書かないと登録できない
     protected $fillable = 
     [
-        'title', 'char', 'combo_content', 'when_season', 'advise', 'twitter_url'
+        'title', 'damage','char', 'combo_content', 'when_season', 'advise', 'twitter_url', 'tag_1', 'tag_2',  'tag_3', 'tag_4'
     ];
 
     //※※※※※※※※※※※※※※※注意ユーザーIDを投稿と結びつけるために必要※※※※※※※※※※※※※※※※※※※
