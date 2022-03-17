@@ -204,7 +204,7 @@
         width: 4px;
         height: 16px;
         margin-right: 12px;
-        background-color: #1a75ff;
+        background-color: #ff9c1a;
         border-radius: 2px;
         content: "";
     }
@@ -213,10 +213,8 @@
     .post_form_char{
         display: flex;
         justify-content: center;
-        height: 25px;
         margin: 20px 10px 10px;
     }
-
 
     /*------------タグ設定------------------*/
     .post_tag_container{
@@ -236,7 +234,7 @@
     }
 
     #damage_textarea{
-        margin: -3px 10px 0 10px;
+        margin: -5px 10px 0 10px;
         padding: 1px;
         width: 100px;
         height: 30px;
@@ -282,9 +280,24 @@
         border-radius: 3px!important;
     }
 
-    #combo_content{
+    #combo_title{
         width: 550px;
         height: 30px;
+    }
+
+    #advise{
+        width: 550px;
+        height: 30px;
+    }
+
+    #combo_content{ /*inputの形を変更*/
+        width: 550px;
+        height: 60px;
+        box-sizing: border-box;
+        margin: 1em 0;
+        padding: .8em;
+        border-radius: 3px;
+        border: 1px solid rgba(0,0,0,0.3);
     }
 
     /*--------------ボタン設定--------------------*/

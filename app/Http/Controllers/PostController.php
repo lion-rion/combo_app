@@ -35,6 +35,7 @@ class PostController extends Controller
 
         //ブログデータを受け取る
         $inputs = $request->all();
+        //dd($inputs);
         \DB::beginTransaction();
         //ブログ登録時のエラー対応
         try {
