@@ -26,10 +26,7 @@ class PostRequest extends FormRequest
         return [
             'title' => 'required | max:100', //タイトルは100文字以内に制限
             'combo_content' => 'required',
-            'advise' => 'required',
-            'twitter_url' => 'required',
             'damage' => 'required',
-            //'when_season' => 'nullable',
             'char' => 'required'
         ];
     }
