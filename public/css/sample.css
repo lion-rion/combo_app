@@ -213,7 +213,20 @@
     .post_form_char{
         display: flex;
         justify-content: center;
-        margin: 20px 10px 10px;
+        margin: 20px 10px 10px 10px;
+    }
+
+    .post_form_another{
+        display: flex;
+        justify-content: center;
+        margin: 15px 10px 20px 10px;
+    }
+
+    /*レシピ欄は下にボタンが配置されるのでマージンを0にする*/
+    .post_form_combo{
+        display: flex;
+        justify-content: center;
+        margin: 15px 10px 0px 10px;
     }
 
     /*------------タグ設定------------------*/
@@ -227,6 +240,23 @@
         justify-content: space-between;
         margin: 10px 30px 10px 10px
         
+    }
+
+    /*--------タグ入力フォーム-----------*/
+    .tag_input_form{
+        display: flex;
+        
+    }
+
+    #tag_1{
+        margin: 10px;
+        width: 120px;
+        height: 30px;
+        box-sizing: border-box;
+        margin: -4px 3px 0px 3px;
+        padding: 0.8em;
+        border-radius: 3px;
+        border: 1px solid rgba(0,0,0,0.3);
     }
 
     .damage{
@@ -290,6 +320,34 @@
         height: 30px;
     }
 
+    .advise_wrap{
+        margin-left: -13px;
+    }
+
+    .twitter_url_wrap{
+        margin-left: -28px;
+    }
+
+    #twitter_url{
+        width: 550px;
+        height: 30px;
+        box-sizing: border-box;
+        margin: 3px 0;
+        padding: .8em;
+        border-radius: 3px;
+        border: 1px solid rgba(0,0,0,0.3);
+    }
+
+    #combo_title{
+        width: 550px;
+        height: 30px;
+        box-sizing: border-box;
+        margin: 3px 0;
+        padding: .8em;
+        border-radius: 3px;
+        border: 1px solid rgba(0,0,0,0.3);
+    }
+
     #combo_content{ /*inputの形を変更*/
         width: 550px;
         height: 60px;
@@ -301,9 +359,16 @@
     }
 
     /*--------------ボタン設定--------------------*/
+    .combo_button_wrap{
+        display: flex;
+        justify-content: center;
+        
+    }
+    
     .combo_button {
+        margin: 0 5px;
         text-align: center;
-        width: 100px;
+        width: 70px;
         color: #fff;
         border-radius: 5px;
         background-color: #eb6100;

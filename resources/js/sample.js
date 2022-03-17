@@ -3,7 +3,7 @@ function selectboxChange() {
     selindex = document.getElementById('Select1').selectedIndex;
     switch (selindex) {
       case 1:
-        target.innerHTML = '<input class="combo_button" type="button" value="→" onclick="OnButtonClickA();"/>';
+        target.innerHTML = '<div class="combo_button_wrap"><input class="combo_button" type="button" value="→" onclick="OnButtonClickA();"/><input class="combo_button" type="button" value="垂直J" onclick="OnButtonClickB();"/><input class="combo_button" type="button" value="前J" onclick="OnButtonClickC();"/><input class="combo_button" type="button" value="後J" onclick="OnButtonClickD();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/></div>';
         break;
       case 2:
         target.innerHTML = '<input type="button" value="Exec" onclick="OnButtonClickA();"/>';
@@ -27,9 +27,4 @@ function OnButtonClickA() {
 function OnButtonClickB() {
     target = document.getElementById("combo_content");
     target.insertAdjacentHTML("beforeend",'');
-}
-
-
-function test(){
-  
 }

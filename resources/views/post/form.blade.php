@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'ブログ投稿')
+@section('title', 'コンボ投稿')
 @section('content')
 
 
@@ -42,17 +42,19 @@
                         @endif
                     </div> 
                 </div>
-                <div class="post_form_char">
+                <div class="post_form_another">
                     <div class="form-group">
                         <label for="title">
                             タイトル : 
                         </label>
-                        <textarea
+                        <input
                             id="combo_title"
                             name="title"
                             class="form-control"
+                            placeholder="例 : 小梅式エイジス表裏"
+                            value="{{ old('title') }}"
                             
-                        >{{ old('title') }}</textarea>
+                        >
                         @if ($errors->has('title'))
                             <div class="text-danger">
                                 {{ $errors->first('title') }}
@@ -60,12 +62,12 @@
                         @endif
                     </div>
                 </div>
-                <div class="post_form_char">
+                <div class="post_form_combo">
                     <div class="form-group">
                         <label for="combo_content">
                             　レシピ : 
                         </label>
-                        <textarea name="combo_content" id="combo_content" type="text" placeholder="" >{{ old('combo_content') }}</textarea>
+                        <input name="combo_content" id="combo_content" value="{{ old('combo_content') }}" type="text" placeholder="例 : 前ジャンプ→大k→中足→波動拳" >
                         @if ($errors->has('combo_content'))
                             <div class="text-danger">
                                 {{ $errors->first('combo_content') }}
@@ -74,41 +76,48 @@
                     </div>
                 </div>
                 <div id="output"></div>
-                <div class="post_form_char">
+                <div class="post_form_another">
                     <div class="form-group">
-                        <label for="advise">
-                            アドバイス :
-                        </label>
-                        <textarea
-                            id="advise"
-                            name="advise"
-                            class="form-control"
-                            rows="4"
-                        >{{ old('advise') }}</textarea>
-                        @if ($errors->has('advise'))
-                            <div class="text-danger">
-                                {{ $errors->first('advise') }}
-                            </div>
-                        @endif
+                        <div class="advise_wrap">
+                            <label for="advise">
+                                アドバイス :
+                            </label>
+                            <textarea
+                                id="advise"
+                                name="advise"
+                                class="form-control"
+                                rows="4"
+                            >{{ old('advise') }}</textarea>
+                            @if ($errors->has('advise'))
+                                <div class="text-danger">
+                                    {{ $errors->first('advise') }}
+                                </div>
+                            @endif
+                        </div>
                     </div> 
                 </div>
-                <div class="post_form_char">
-                    <label for="twitter_url">
-                        twitter
-                    </label>
-                    <textarea
-                        id="twitter_url"
-                        name="twitter_url"
-                        class="form-control"
-                        rows="4"
-                    >{{ old('twitter_url') }}</textarea>
-                    @if ($errors->has('twitter_url'))
-                        <div class="text-danger">
-                            {{ $errors->first('twitter_url') }}
+                <div class="post_form_another">
+                    <div class="form-group">
+                        <div class="twitter_url_wrap">
+                            <label for="twitter_url">
+                                Twitterリンク : 
+                            </label>
+                            <input
+                                id="twitter_url"
+                                name="twitter_url"
+                                class="form-control"
+                                rows="4"
+                                value="{{ old('twitter_url') }}"
+                            >
+                            @if ($errors->has('twitter_url'))
+                                <div class="text-danger">
+                                    {{ $errors->first('twitter_url') }}
+                                </div>
+                            @endif
                         </div>
-                    @endif
+                    </div>
                 </div>
-                <div class="post_form_char">
+                <div class="post_form_another">
                     <label for="when_season">
                         シーズン : 
                     </label>
@@ -123,6 +132,17 @@
                             <option value="シーズン4">シーズン4</option>
                             <option value="シーズン5">シーズン5</option>
                         </select>
+                    </div>
+                </div>
+                <div class="post_form_another">
+                    <label for="tag">
+                        タグ : 
+                    </label>
+                    <div class="tag_input_form"  action="">
+                        <input name="tag_1" id="tag_1" value="{{ old('tag_1') }}" type="text" placeholder="" >
+                        <input name="tag_1" id="tag_1" value="{{ old('tag_1') }}" type="text" placeholder="" >
+                        <input name="tag_1" id="tag_1" value="{{ old('tag_1') }}" type="text" placeholder="" >
+                        <input name="tag_1" id="tag_1" value="{{ old('tag_1') }}" type="text" placeholder="" >
                     </div>
                 </div>
                 <div class="mt-5">
