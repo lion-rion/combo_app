@@ -15,21 +15,21 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id(); 
-            $table->string('title',100); //タイトル・コンボの名前など
+            
             $table->text('char'); //キャラクター選択
-            $table->text('when_season')->nullable(); //シーズン対応
+            $table->integer('damage'); //ダメージ
+            $table->string('title',100); //タイトル・コンボの名前など
             $table->text('combo_content'); //コンボ内容
             $table->text('advise'); //アドバイス・コツなど
-            $table->integer('damage'); //ダメージ
             $table->text('twitter_url')->nullable(); //ツイッターのurlを記載
+            $table->text('when_season')->nullable(); //シーズン対応
             $table->text('tag_1')->nullable(); //タグ1
             $table->text('tag_2')->nullable(); //タグ2
             $table->text('tag_3')->nullable(); //タグ3
             $table->text('tag_4')->nullable(); //タグ4
             $table->foreignId('user_id')->constrained(); //ユーザーID追加
             $table->timestamps(); //日付 
-
-            //あとダメージ
+            //あと質問機能・記事投稿機能もいつか追加したい
         });
     }
 
