@@ -28,6 +28,7 @@ class PostRequest extends FormRequest
             'combo_content' => 'required',
             'advise' => 'required',
             'twitter_url' => 'required',
+            'damage' => 'required',
             //'when_season' => 'nullable',
             'char' => 'required'
         ];
