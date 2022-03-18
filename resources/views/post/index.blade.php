@@ -97,8 +97,5 @@
         return false;
     }
     }
-    function alt() {
-        alert("ようこそJavaScriptのページへ！\nこのサンプルは初心者でも簡単にJavaScriptが使えるように応援しています。");
-    }
 </script>
 @endsection
