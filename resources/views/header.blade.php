@@ -16,7 +16,7 @@
     <div class="global_nav_item_wrapper">
       <a class="global_nav_item" href="{{ route('posts') }}">TOP</a>
       <a class="global_nav_item" href="{{ route('posts') }}">新着一覧</a>
-      <a class="global_nav_item" href="{{ route('posts') }}">検索</a>
+      <a class="global_nav_item" href="{{ route('search') }}">検索</a>
       <a class="global_nav_item" href="{{ route('posts') }}">保存一覧</a>
     </div>
   </nav>
