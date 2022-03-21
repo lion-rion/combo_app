@@ -29,7 +29,3 @@ function OnButtonClickB() {
     target.insertAdjacentHTML("beforeend",'');
 }
 
-
-function test(){
-  
-}

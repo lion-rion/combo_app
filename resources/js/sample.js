@@ -28,3 +28,4 @@ function OnButtonClickB() {
     target = document.getElementById("combo_content");
     target.insertAdjacentHTML("beforeend",'');
 }
+
