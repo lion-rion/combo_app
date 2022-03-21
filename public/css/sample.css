@@ -261,6 +261,11 @@
 
     .damage{
         font-size: 12px;
+        margin-right: 10px;
+    }
+
+    .post_detail_sub{
+        font-size: 13px;
     }
 
     #damage_textarea{
@@ -486,16 +491,19 @@
     }
 
     .detail_recipe_h2::before{
-        background-color: #23b1ca;
+        background-color: #23ca69;
     }
 
     .detail_advise_h2::before{
         background-color: #c77517;
     }
-
-    .post_detail_normal_p{
-        
+    .detail_twitter_h2::before{
+        background-color: #179ec7;
     }
+
+    /*-------Twitter埋め込み設定----------*/
+    
+    
 
     }
     

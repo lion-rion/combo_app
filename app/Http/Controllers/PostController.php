@@ -114,4 +114,36 @@ class PostController extends Controller
    //         abort(403);
      //   }
     //}
+
+
+    /*------検索機能-----*/
+    public function serch(Request $request) {
+        $keyword_name = $request->name;
+        $keyword_age = $request->age;
+        $keyword_sex = $request->sex;
+        $keyword_age_condition = $request->age_condition;
+  
+        if(!empty($keyword_name) && empty($keyword_age) && empty($keyword_age_condition)) {
+        $query = Post::query();
+        $posts = $query->where('title','like','%'.$keyword_name.'%')->get();
+        $message = "「". $keyword_name."」を含む名前の検索が完了しました。";
+        return view('post.serch')->with([
+          'posts' => $posts,
+          'message' => $message,
+        ]);
+        }
+        elseif(!empty($keyword_name) && empty($keyword_age) && empty($keyword_age_condition)) {
+        return $this->orderBy('created_at', 'desc')->get();
+        }
+      else {
+        $message = "検索結果はありません。";
+        return view('post.serch')->with('message',$message);
+        }
+
+        
+  }
+
+  public function search(Request $request) {
+    return view('post.search');
+    }
 }

@@ -1,39 +1,58 @@
 @extends('layout')
 @section('title','ブログ一覧')
 @section('content')
-<!--
-<form name="form1" action="">
-    <select id="Select1" onchange="selectboxChange();">
-      <option>---</option>
-      <option>要</option>
-      <option>要素2</option>
-      <option>要素3</option>
-      <option>要素4</option>
-      <option>要素5</option>
-    </select>
-
-</form>
-<div id="output"></div>
-<input type="button" value="button" onclick="btnChk()">
-<input type="button" value="ご挨拶" onClick="alt();">
--->
 <div class="main_content_wrap">
     @if (session('err_msg'))
         <p class="text-danger">{{ session('err_msg')  }}</p>
     @endif
     <div class="content_wrap">
         <div class="ranking_section_wrap"></div>
-
         <div class="post_section_wrap">
             @foreach ($posts as $post) 
             <div class="post_section">
+                <!--
+                <h1>検索条件を入力してください</h1>
+                <form action="{{ url('/serch')}}" method="post">
+                {{ csrf_field()}}
+                {{method_field('get')}}
+                <div class="form-group">
+                    <label>名前</label>
+                    <input type="text" class="form-control col-md-5" placeholder="検索したい名前を入力してください" name="name">
+                </div>
+                <div class="form-group">
+                    <label>年齢</label>
+                    <input type="text" class="form-control col-md-5" placeholder="年齢を入力してください" name="age" value="{{ old("name")}}">
+                </div>
+
+                <div class="form-group">
+                    <label>年齢の条件</label>
+                    <select class="form-control col-md-5" name="age_condition">
+                    <option selected value="0">選択...</option>
+                    <option value="1">以上</option>
+                    <option value="2">以下</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>性別</label>
+                    <select class="form-control col-md-5" name="sex">
+                    <option selected value="0">選択...</option>
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary col-md-5">検索</button>
+                </form>
+            -->
+            
                 <a class="post_section_link" href="/post/{{ $post->id }}">
-                    </section>
                     <section class="post-info">
                         <!--ユーザーネーム（今後urlで飛べるように設定）-->
                         <div class="char_wrap">
                             <p class="char_p">【{{ $post->char}}】</p>
                             <p class="damage">ダメージ : {{ $post->damage }}</p>
+                            <p class="damage">{{ $post->when_season }}対応</p>
                         </div>
                         <div class="username_data">
                             <p class="username_p">{{ $user = Auth::user()->name }}</p>
@@ -81,13 +100,10 @@
                 </a>
             </div>
             @endforeach
-            
         </div>
-        
         <div class="right_section_wrap"></div>
     </div>
-    
-</div>
+    </div>
 </div>
 <script>
     function checkDelete(){
