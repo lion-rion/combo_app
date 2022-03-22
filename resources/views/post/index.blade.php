@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title','ブログ一覧')
+@section('title','格ゲー総合攻略')
 @section('content')
 <div class="main_content_wrap">
     @if (session('err_msg'))
@@ -10,42 +10,6 @@
         <div class="post_section_wrap">
             @foreach ($posts as $post) 
             <div class="post_section">
-                <!--
-                <h1>検索条件を入力してください</h1>
-                <form action="{{ url('/serch')}}" method="post">
-                {{ csrf_field()}}
-                {{method_field('get')}}
-                <div class="form-group">
-                    <label>名前</label>
-                    <input type="text" class="form-control col-md-5" placeholder="検索したい名前を入力してください" name="name">
-                </div>
-                <div class="form-group">
-                    <label>年齢</label>
-                    <input type="text" class="form-control col-md-5" placeholder="年齢を入力してください" name="age" value="{{ old("name")}}">
-                </div>
-
-                <div class="form-group">
-                    <label>年齢の条件</label>
-                    <select class="form-control col-md-5" name="age_condition">
-                    <option selected value="0">選択...</option>
-                    <option value="1">以上</option>
-                    <option value="2">以下</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>性別</label>
-                    <select class="form-control col-md-5" name="sex">
-                    <option selected value="0">選択...</option>
-                    <option value="1">男</option>
-                    <option value="2">女</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn btn-primary col-md-5">検索</button>
-                </form>
-            -->
-            
                 <a class="post_section_link" href="/post/{{ $post->id }}">
                     <section class="post-info">
                         <!--ユーザーネーム（今後urlで飛べるように設定）-->
@@ -100,6 +64,98 @@
                 </a>
             </div>
             @endforeach
+            <section class="search_window">
+                <div class="post_section">
+                    <a class="anchor" id="1">
+                    <h2 class="post_form_h2">検索</h2>
+                    <form action="{{ url('/serch')}}" method="post">
+                    {{ csrf_field()}}
+                    {{method_field('get')}}
+                    <div class="post_form_char">
+                        <div class="flex">
+                            <p class="form_p">キャラクター : </p>
+                            <div class="char_select_form"  action="">
+                                    <label for="char">
+                                    </label>
+                                    <select name="char" id="Select1" class="cp_ipselect cp_sl01" onchange="selectboxChange();">
+                                        <option value=''>---</option>
+                                        <option value="リュウ">リュウ</option>
+                                        <option value="ケン">ケン</option>
+                                        <option value="春麗">春麗</option>
+                                        <option value="ラシード">ラシード</option>
+                                        <option value="バーディー">バーディー</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <p>ダメージ : </p>
+                            <div class="damage_textarea">
+                                <textarea
+                                    id="damage_textarea"
+                                    name="mix_damage"
+                                >{{ old('damage') }}</textarea>
+                            </div>
+                            <p>以上</p>
+                            <div class="damage_textarea">
+                                <textarea
+                                    id="damage_textarea"
+                                    name="max_damage"
+                                >{{ old('damage') }}</textarea>
+                            </div> 
+                            <p>以下</p>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <div class="flex">
+                                <label class="label_title" for="title">
+                                    タイトル :　
+                                </label>
+                                <input id="combo_title" type="text" class="form-control col-md-5" placeholder="例 : 小梅式エイジス表裏" name="title">
+                            </div>
+                        </div>
+                    <div class="post_form_combo">
+                        <div class="form-group">
+                            <div class="flex">
+                                <label for="combo_content">
+                                    レシピ :　
+                                </label>
+                                <input name="combo_content" id="combo_content" value="{{ old('combo_content') }}" type="text" placeholder="例 : 前ジャンプ→大k→中足→波動拳" >
+                            </div>
+                        </div>
+                    </div>
+                    <div id="output"></div>
+                    <div class="flex">
+                        <label class="when_season" for="when_season">
+                            　シーズン : 
+                        </label>
+                        <div class="char_select_form"  action="">
+                            <label for="when_season">
+                            </label>
+                            <select name="when_season" class="cp_ipselect cp_sl01">
+                                <option value=''>---</option>
+                                <option value="シーズン1">シーズン1</option>
+                                <option value="シーズン2">シーズン2</option>
+                                <option value="シーズン3">シーズン3</option>
+                                <option value="シーズン4">シーズン4</option>
+                                <option value="シーズン5">シーズン5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="post_form_another">
+                        <label for="tag">
+                            タグ :　 
+                        </label>
+                        <div class="tag_input_form"  action="">
+                            <input name="tag_1" class="tag_1" id="tag_1" value="{{ old('tag_1') }}" type="text" placeholder="" >
+                        </div>
+                    </div>
+                    <div class="flex">
+                    <button type="submit" class="search_button">検索</button>
+                </div>
+                    </form>
+                </div>
+            </section>
+            <!--ページネーション用のコード {{ $posts->links() }}-->
         </div>
         <div class="right_section_wrap"></div>
     </div>

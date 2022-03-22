@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <script src="{{ mix('js/sample.js') }}" defer></script>
     <script src="{{ mix('js/jquery.js') }}" defer></script>
     <link rel="stylesheet" href='/css/sample.css'>

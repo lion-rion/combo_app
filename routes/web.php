@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth']], function() {
     //ブログ削除
     Route::post('/post/delete/{id}', 'App\Http\Controllers\PostController@exeDelete')->name('delete');
 
-    Route::get('/serch','App\Http\Controllers\PostController@serch');
+    Route::get('/serch','App\Http\Controllers\PostController@serch')->name('serch');
     Route::get('search','App\Http\Controllers\PostController@search')->name('search');
 
 });

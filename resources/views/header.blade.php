@@ -5,11 +5,16 @@
       <a href="https://rust-wiki.net/"><h1 id="title">格ゲー総合攻略</h1></a> 
     </div>
     <div id="header-end">
+      <!--
       @auth
       <a href="{{ url('/logout') }}">ログアウト</a>
       @endauth
+      -->
+      @guest <!--ログインしていなかったら表示-->
       <a href="{{ url('/login') }}">ログイン</a>
-      <a href="{{ route('create') }}">コンボ投稿</a>
+      @endguest
+      <a href="#1"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="{{ route('create') }}"><i class="fa-regular fa-pen-to-square"></i></a>
     </div>
   </div>
   <nav id="global_nav">
