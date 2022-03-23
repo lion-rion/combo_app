@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title', 'コンボ投稿')
+@section('title', 'コンボ投稿フォーム')
 @section('content')
 
 
@@ -15,11 +15,9 @@
                 <h2 class="post_form_h2">コンボ投稿</h2>
                 <form method="POST" action="{{ route('store') }}" onSubmit="return checkSubmit()">
                 @csrf
-                <div class="post_form_char">
-                    <p class="form_p">キャラクター : </p>
+                <div class="post_select_form">
+                    <p class="form_p">キャラクター</p>
                     <div class="char_select_form"  action="">
-                        <label for="char">
-                        </label>
                         <select name="char" id="Select1" class="cp_ipselect cp_sl01" onchange="selectboxChange();">
                             <option value="null">---</option>
                             <option value="リュウ">リュウ</option>
@@ -29,98 +27,9 @@
                             <option value="バーディー">バーディー</option>
                         </select>
                     </div>
-                    <p>ダメージ : </p>
-                    <div class="damage_textarea">
-                        <textarea
-                            id="damage_textarea"
-                            name="damage"
-                        >{{ old('damage') }}</textarea>
-                        @if ($errors->has('damage'))
-                            <div class="text-danger">
-                                {{ $errors->first('damage') }}
-                            </div>
-                        @endif
-                    </div> 
                 </div>
-                <div class="post_form_another">
-                    <div class="form-group">
-                        <label for="title">
-                            タイトル : 
-                        </label>
-                        <input
-                            id="combo_title"
-                            name="title"
-                            class="form-control"
-                            placeholder="例 : 小梅式エイジス表裏"
-                            value="{{ old('title') }}"
-                            
-                        >
-                        @if ($errors->has('title'))
-                            <div class="text-danger">
-                                {{ $errors->first('title') }}
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div class="post_form_combo">
-                    <div class="form-group">
-                        <label for="combo_content">
-                            　レシピ : 
-                        </label>
-                        <input name="combo_content" id="combo_content" value="{{ old('combo_content') }}" type="text" placeholder="例 : 前ジャンプ→大k→中足→波動拳" >
-                        @if ($errors->has('combo_content'))
-                            <div class="text-danger">
-                                {{ $errors->first('combo_content') }}
-                            </div>
-                        @endif
-                    </div>
-                </div>
-                <div id="output"></div>
-                <div class="post_form_another">
-                    <div class="form-group">
-                        <div class="advise_wrap">
-                            <label for="advise">
-                                アドバイス :
-                            </label>
-                            <textarea
-                                id="advise"
-                                name="advise"
-                                class="form-control"
-                                rows="4"
-                            >{{ old('advise') }}</textarea>
-                            @if ($errors->has('advise'))
-                                <div class="text-danger">
-                                    {{ $errors->first('advise') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div> 
-                </div>
-                <div class="post_form_another">
-                    <div class="form-group">
-                        <div class="twitter_url_wrap">
-                            <label for="twitter_url">
-                                Twitterリンク : 
-                            </label>
-                            <input
-                                id="twitter_url"
-                                name="twitter_url"
-                                class="form-control"
-                                rows="4"
-                                value="{{ old('twitter_url') }}"
-                            >
-                            @if ($errors->has('twitter_url'))
-                                <div class="text-danger">
-                                    {{ $errors->first('twitter_url') }}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-                <div class="post_form_another">
-                    <label for="when_season">
-                        シーズン : 
-                    </label>
+                <div class="post_select_form">
+                    <p class="form_p">バージョン</p>
                     <div class="char_select_form"  action="">
                         <label for="when_season">
                         </label>
@@ -134,22 +43,59 @@
                         </select>
                     </div>
                 </div>
-                <div class="post_form_another">
-                    <label for="tag">
-                        タグ : 
-                    </label>
-                    <div class="tag_input_form"  action="">
-                        <input name="tag_1" id="tag_1" value="{{ old('tag_1') }}" type="text" placeholder="" >
-                        <input name="tag_1" id="tag_1" value="{{ old('tag_1') }}" type="text" placeholder="" >
-                        <input name="tag_1" id="tag_1" value="{{ old('tag_1') }}" type="text" placeholder="" >
-                        <input name="tag_1" id="tag_1" value="{{ old('tag_1') }}" type="text" placeholder="" >
+                <div class="post_select_form">
+                    <p class="p_arange">ダメージ</p>
+                    <div class="damage_textarea">
+                        <input class="normal_input" id="" name="damage" value="{{ old('damage') }}">
+                    </div> 
+                </div>
+                <div class="post_info">
+                    <p class="post_form_upper_p">タイトル</p>
+                    <input
+                        class="form_input_long"
+                        name="title"
+                        placeholder="例 : 小梅式エイジス表裏"
+                        value="{{ old('title') }}">
+                </div>
+                <div class="post_info">
+                        <p class="post_form_upper_p">レシピ</p>
+                        <textarea id="combo_content" name="combo_content" value="{{ old('combo_content') }}" type="text" placeholder="例 : 前ジャンプ→大k→中足→波動拳" ></textarea>
+                </div>
+                <div id="output"></div>
+                <div class="post_info">
+                    <div class="advise_wrap">
+                        <p class="post_form_upper_p">アドバイス</p>
+                        <textarea
+                            id="advise"
+                            name="advise"
+                            class="form-control"
+                            rows="4"
+                        >{{ old('advise') }}</textarea>
                     </div>
                 </div>
-                <div class="mt-5">
-                    <a class="btn btn-secondary" href="{{ route('posts') }}">
-                        キャンセル
-                    </a>
-                    <button type="submit" class="btn btn-primary">
+                <div class="post_info">
+                    <div class="twitter_url_wrap">
+                        <p class="post_form_upper_p">Twitterリンク</p>
+                        <input
+                            id="twitter_url"
+                            name="twitter_url"
+                            class="form_input_long"
+                            rows="4"
+                            value="{{ old('twitter_url') }}"
+                        >
+                    </div>
+                </div>
+                <div class="post_info">
+                    <p class="post_form_upper_p">タグ</p>
+                    <div class="flex_wrap"  action="">
+                        <input name="tag_1" class="tag_1" value="{{ old('tag_1') }}" type="text" placeholder="" >
+                        <input name="tag_2" class="tag_1" value="{{ old('tag_2') }}" type="text" placeholder="" >
+                        <input name="tag_3" class="tag_1" value="{{ old('tag_3') }}" type="text" placeholder="" >
+                        <input name="tag_4" class="tag_1" value="{{ old('tag_4') }}" type="text" placeholder="" >
+                    </div>
+                </div>
+                <div class="flex">
+                    <button type="submit" class="submit_button">
                         投稿する
                     </button>
                 </div>
@@ -160,7 +106,7 @@
 </div>
 <script>
 function checkSubmit(){
-if(window.confirm('送信してよろしいですか？')){
+if(window.confirm('投稿してよろしいですか？')){
     return true;
 } else {
     return false;
