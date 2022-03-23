@@ -1,70 +1,110 @@
 @extends('layout')
 @section('title','ブログ詳細') <!--タイトルはコンボのタイトルに設定するとイイかも？？-->
 @section('content')
-<div class="main_content_wrap">
-  @if (session('err_msg'))
-      <p class="text-danger">{{ session('err_msg')  }}</p>
-  @endif
-<div class="content_wrap">
-  <div class="ranking_section_wrap"></div>
-  <div class="post_section_wrap">
-    <div class="post_detail_section">
-      <div class="poster_detail">
-        <p><span>@</span>{{ $user = Auth::user()->name }}</p><!--プロフ画像を追加する予定-->
-        <div class="created_post">
-          <p class="created_at_p">投稿日 <time datetime="{{ $post->created_at}}">{{ $post->created_at->format('Y年m月d日')}}</time></p>
-          <p>更新日 {{ $post->updated_at->format('Y年m月d日')}}</p>
-        </div>
+<div id="main_content_wrap">
+  <div id="content_wrap">
+      <!--左側メニューのラップ-->
+      <div class="right_menu_wrap">
       </div>
-      <h1 class="post_detail_h1">{{ $post->title }}</h1>
-      <section class="tag_flex_wrap">
-        <div class="post_tag_container">
-            <i class="fa-solid fa-tags"></i>
-            <div class="post_tag_wrap">
-                @if($post->tag_1 != null)
-                <p class="post_tag">{{ $post->tag_1 }}</p>
-                @endif
-            </div>
-            <div class="post_tag_wrap">
-                @if($post->tag_2 != null)
-                <p class="post_tag">{{ $post->tag_2 }}</p>
-                @endif
-            </div>
-            <div class="post_tag_wrap">
-                @if($post->tag_3 != null)
-                <p class="post_tag">{{ $post->tag_3 }}</p>
-                @endif
-            </div>
-            
-            <div class="post_tag_wrap">
-                @if($post->tag_4 != null)
-                <p class="post_tag">{{ $post->tag_4 }}</p>
-                @endif
-            </div>
-        </div>
-      </section>
-      
-      <section class="combo_recipe">
-        <h2 class="post_detail_h2 detail_recipe_h2">コンボレシピ | <span class="post_detail_sub">【{{ $post->char}}】 ダメージ : {{ $post->damage }} {{ $post->when_season }}対応</span> </h2>
-        <div class="combo_len">
-          <p class="combo_detail_recipe">{{$post->combo_content}}</p>
-        </div>
-      </section>
-      <section>
-        <h2 class="post_detail_h2 detail_advise_h2">アドバイス</h2>
-        <div class="">
-          <p class="post_detail_normal_p">{{ $post->advise}}</p>
-        </div>
-      </section>
-      <section>
-        <h2 class="post_detail_h2 detail_twitter_h2">コンボ動画</h2>
-        <blockquote class="twitter-tweet" data-width="100%">
-          <a href="https://twitter.com/moeta_aoshiki/status/1503017833055150084?s=20&t=sV8t8HR0lZMJQIpSFa_tCw"></a>
-          </blockquote>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </section>
-  </div>
+      <!--左側メニューのラップ終了-->
+      <!--中央メニューのラップ-->
+      <div class="post_content_wrap">
+              <section class="post_section_wrap">
+                  <div class="post_info_wrap">
+                    <!--投稿者情報を記載(アイコンを追加したらよさそう)-->
+                    <div class="flex post_info">
+                      <p><span>@</span>{{ $post->user->name }}</p>
+                    </div>
+                    <div class="post_info flex created_post">
+                      <p class="created_at_p">投稿日 <time datetime="{{ $post->created_at}}">{{ $post->created_at->format('Y年m月d日')}}</time></p>
+                      <p>更新日 {{ $post->updated_at->format('Y年m月d日')}}</p>
+                    </div>
+                    <div class="flex post_info">
+                        <p class="post_info_item post_info_char">【{{ $post->char }}】</p>
+                        <p class="post_info_item post_info_damage">ダメージ : {{ $post->damage }}</p>
+                        <p class="post_info_item post_info_when_season">{{ $post->when_season }}対応</p>
+                    </div>
+                  </div>
+                  <div class="post_info post_title_wrap">
+                      <div class="post_title">
+                        <h1 class="post_detail_h1">{{ $post->title }}</h1>
+                      </div>
+                  </div>
+                  <!--タグからリンクに飛べるようにしたほうがいい。後日やる予定-->
+                  <div class="tag_flex_wrap">
+                    <div class="post_tag_container">
+                        <i class="fa-solid fa-tags"></i>
+                        <div class="post_tag_wrap">
+                            @if($post->tag_1 != null)
+                            <p class="post_tag">{{ $post->tag_1 }}</p>
+                            @endif
+                        </div>
+                        <div class="post_tag_wrap">
+                            @if($post->tag_2 != null)
+                            <p class="post_tag">{{ $post->tag_2 }}</p>
+                            @endif
+                        </div>
+                        <div class="post_tag_wrap">
+                            @if($post->tag_3 != null)
+                            <p class="post_tag">{{ $post->tag_3 }}</p>
+                            @endif
+                        </div>
+                        
+                        <div class="post_tag_wrap">
+                            @if($post->tag_4 != null)
+                            <p class="post_tag">{{ $post->tag_4 }}</p>
+                            @endif
+                        </div>
+                    </div>
+                  </div>
+                  <section class="combo_recipe">
+                    <h2 class="post_detail_h2 detail_recipe_h2">コンボレシピ</h2>
+                    <div class="combo_content">
+                      <p class="combo_detail_recipe">{{$post->combo_content}}</p>
+                    </div>
+                  </section>
+                  <section>
+                    <h2 class="post_detail_h2 detail_advise_h2">アドバイス</h2>
+                    <div class="">
+                      <p class="post_detail_normal_p">{{ $post->advise}}</p>
+                    </div>
+                  </section>
+                  <section>
+                    <h2 class="post_detail_h2 detail_twitter_h2">コンボ動画</h2>
+                    <blockquote class="twitter-tweet" data-width="100%">
+                      <a href="https://twitter.com/moeta_aoshiki/status/1503017833055150084?s=20&t=sV8t8HR0lZMJQIpSFa_tCw"></a>
+                      </blockquote>
+                      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  </section>
+                  <section>
+                    @auth
+                    @if(Auth::user()->id === $post->user_id)
+                    <button type="button" class="edit_button" onclick="location.href='/post/edit/{{ $post->id }}'">編集</button>
+                    @endif
+                    @endauth
+                    @auth
+                    @if(Auth::user()->id === $post->user_id)
+                    <form method="POST" action="{{ route('delete', $post->id) }}" onSubmit="return checkDelete()">
+                        @csrf
+                        <button type="submit" class="delete_button">削除</button>
+                    </form>
+                    @endif
+                    @endauth
+                  </section>
+              </section>
+              
+      <!--右側メニューのラップ-->
+      <div class="left_menu_wrap"></div>
+      <!--右側メニューのラップ終了-->
   </div>
 </div>
-</div>
+<script>
+  function checkDelete(){
+  if(window.confirm('この記事を投稿してよろしいですか？削除した投稿は復旧できません。')){
+      return true;
+  } else {
+      return false;
+  }
+  }
+  </script>
 @endsection
