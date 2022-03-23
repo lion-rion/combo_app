@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
     //レシピ一覧
     public function show(){
+        
         $posts = Post::paginate(5);
         // dd($blogs); これを使うと$blogsの中身を見ることができる
         return view('post.index',['posts' => $posts]);
@@ -68,18 +70,26 @@ class PostController extends Controller
 
         //バリデーションが同じなのでBlogRequestは同じ
         //ブログデータを受け取る
+
         $inputs = $request->all();
+        //dd($inputs);
         \DB::beginTransaction();
         //ブログ更新のエラー対応
         try {
             //ブログ登録
-            $post = Post::find($inputs['id']);
+            $post = Post::find($inputs['id']);//iDで検索するため、フォーム側にはかくしてidを飛ばす必要がある
             $post->fill([
                 'title' => $inputs['title'],
-                'content' => $inputs['combo_content'],
+                'char' => $inputs['char'],
+                'damage' => $inputs['damage'],
+                'combo_content' => $inputs['combo_content'],
                 'advise' => $inputs['advise'],
-                'twitterUrl' => $inputs['twitter_url'],
-                'season5' => $inputs['when_season']
+                'twitter_url' => $inputs['twitter_url'],
+                'when_season' => $inputs['when_season'],
+                'tag_1' => $inputs['tag_1'],
+                'tag_2' => $inputs['tag_2'],
+                'tag_3' => $inputs['tag_3'],
+                'tag_4' => $inputs['tag_4']
             ]);
             $post->save();
             \DB::commit();
