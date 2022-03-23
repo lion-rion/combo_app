@@ -37,5 +37,10 @@ Route::group(['middleware' => ['auth']], function() {
 
 });
 
+Route::post('/post/{comment_id}/comments','App\Http\Controllers\CommentsController@store');
+
+//コメント取消処理
+Route::get('/comments/{comment_id}', 'App\Http\Controllers\CommentsController@destroy');
+
 
 require __DIR__.'/auth.php';
