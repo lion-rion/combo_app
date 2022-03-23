@@ -22,6 +22,12 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+     /*---コメントハズメニー設定---*/
+     public function comments()
+     {
+        return $this->hasMany(Comment::class);
+     }
+
     protected static function boot()
     {
         parent::boot();

@@ -33,6 +33,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    /*---コメントハズメニー設定---*/
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
     /**
      * The attributes that should be cast.
      *
