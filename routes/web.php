@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/serch','App\Http\Controllers\PostController@serch')->name('serch');
     Route::get('search','App\Http\Controllers\PostController@search')->name('search');
 
+    Route::get('/{id}','App\Http\Controllers\ProfileController@user_profile')->name('user_profile');
+    Route::resource('user', 'App\Http\Controllers\UserController');
 });
 
 Route::post('/post/{comment_id}/comments','App\Http\Controllers\CommentsController@store');
