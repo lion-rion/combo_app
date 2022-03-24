@@ -28,6 +28,35 @@ php artisan key:generate
 php artisan migrate
 
 //上記でエラーが発生する場合は
+
 php artisan migrate:fresh
 php artisan migrate:refresh
+```
+
+スクリプトのコンパイル
+
+```
+npm run dev
+
+//実行できない場合はnpmとnode.jsのインストール
+```
+
+#雑用
+既存のテーブルにカラムを追加するとき
+
+```
+
+php artisan make:migration add_column_to_users_table --table=users
+
+//マイグレーションファイルをいじった後
+
+php artisan migrate
+
+```
+
+ストレージへのリンク
+
+```
+php artisan storage:link
+
 ```
