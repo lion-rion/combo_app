@@ -34,8 +34,6 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/serch','App\Http\Controllers\PostController@serch')->name('serch');
     Route::get('search','App\Http\Controllers\PostController@search')->name('search');
-    Route::get('/{name}','App\Http\Controllers\UserController@user_profile')->name('user_profile');
-    Route::resource('user', 'App\Http\Controllers\UserController');
 
 });
 

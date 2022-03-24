@@ -15,8 +15,6 @@
             <div class="flex post_info">
               <p><span>@</span>{{ $post->user->name }}</p>
             </div>
-            
-            <img src="{{ asset('storage/profiles/'.$post->user->profile_image) }}" alt="プロフィール画像"><!--プロフ画像追加-->
             <div class="post_info flex created_post">
               <p class="created_at_p">投稿日 <time datetime="{{ $post->created_at}}">{{ $post->created_at->format('Y年m月d日')}}</time></p>
               <p>更新日 {{ $post->updated_at->format('Y年m月d日')}}</p>
@@ -162,5 +160,4 @@
   }
   }
   </script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 @endsection

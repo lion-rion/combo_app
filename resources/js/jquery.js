@@ -8,7 +8,3 @@ $('#search-text').focus();//テキスト入力のinputにフォーカス
 $(".close-btn").click(function () {
   $("#search-wrap").removeClass('panelactive');//#search-wrapからpanelactiveクラスを除去
 });
-
-$('.aiueo').on('click', function () {
-  $('.aiueo').toggleClass('one');
-});
