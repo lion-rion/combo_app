@@ -14,6 +14,9 @@
                     <div class="profile_card">
                         <img class="profile_img" src="{{ asset('storage/profiles/'.$user->profile_image) }}" id="img">
                         <p class="profile_username"><span>@</span>{{ $user->name }}</p>
+                        <p class="profile_post_count"><span>POST : </span>{{ $user->post_count }}</p>
+                        <p class="normal_p">{{ $user->profile_text }}</p>
+                        <!--ここに｛・・・｝を置いて通報ボタンとかを作ろう-->
                     </div>
                 </div>
             </section>
