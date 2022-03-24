@@ -110,6 +110,7 @@
                 <div class="comment_list">
                   <div class="post_info flex_space_between created_post">
                     <p><span>@</span>{{ $post->user->name }}</p>
+                    <img src="{{ asset('storage/profiles/'.$post->user->profile_image) }}" alt="プロフィール画像"><!--プロフ画像追加-->
                     <p>{{ $post->created_at->format('Y-m-d h:m')}}</p>
                   </div>
                   <div class="comment_wrap">
