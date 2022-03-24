@@ -13,6 +13,8 @@ class ProfileController extends Controller
     //
     public function user_profile($id) {
         $user = User::find($id);
+        $user->post_count = Post::where('user_id', $user->id)->get()->count(); //投稿数を計算する変数
+        //dd($user->post_count);
         return view('user.profile', ['user' => $user]);
     }
 }
