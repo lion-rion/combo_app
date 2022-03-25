@@ -8,30 +8,64 @@
     <div class="content_wrap">
         <div class="ranking_section_wrap"></div>
         <div class="post_section_wrap">
+            @if ($posts != null)
+            @foreach ($posts as $post) 
             <div class="post_section">
-                <h1>検索条件を入力してください</h1>
-                <form action="{{ url('/serch')}}" method="post">
-                {{ csrf_field()}}
-                {{method_field('get')}}
-                <div class="form-group">
-                    <label>キャラ</label>
-                    <select class="form-control col-md-5" name="char">
-                        <option value="">...</option>
-                        <option value="リュウ">リュウ</option>
-                        <option value="ケン">ケン</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>タイトル</label>
-                    <input type="text" class="form-control col-md-5" placeholder="検索したい名前を入力してください" name="title">
-                </div>
-                <div class="form-group">
-                    <label>ダメージ</label>
-                    <input type="text" class="form-control col-md-5" placeholder="dameを入力してください" name="damage" value="{{ old("damage")}}">
-                </div>
-                <button type="submit" class="btn btn-primary col-md-5">検索</button>
-                </form>
+                <a class="post_section_link" href="/post/{{ $post->id }}">
+                    <section class="post-info">
+                        <!--ユーザーネーム（今後urlで飛べるように設定）-->
+                        <div class="char_wrap">
+                            <p class="char_p">【{{ $post->char}}】</p>
+                            <p class="damage">ダメージ : {{ $post->damage }}</p>
+                            <p class="damage">{{ $post->when_season }}対応</p>
+                        </div>
+                        <div class="username_data">
+                            <p class="username_p">{{ $user = Auth::user()->name }}</p>
+                            <p class="created_data_p">投稿日 : {{ $post->created_at->format('Y年m月d日') }}</p>
+                        </div>
+                    </section>
+                    <section class="post_title_wrap">
+                        <div class="post_title">
+                            <h2 class="post_title_h2">{{ $post->title }}</h2>
+                        </div>
+                    </section>
+                    <section class="combo_len_wrap">
+                        <div class="combo_len">
+                            <p class="combo_len_p">レシピ : {{ $post->combo_content }}</p>
+                        </div>
+                    </section>
+                    <!--タグからリンクに飛べるようにしたほうがいい。後日やる予定-->
+                    <section class="tag_flex_wrap">
+                        <div class="post_tag_container">
+                            <i class="fa-solid fa-tags"></i>
+                            <div class="post_tag_wrap">
+                                @if($post->tag_1 != null)
+                                <p class="post_tag">{{ $post->tag_1 }}</p>
+                                @endif
+                            </div>
+                            <div class="post_tag_wrap">
+                                @if($post->tag_2 != null)
+                                <p class="post_tag">{{ $post->tag_2 }}</p>
+                                @endif
+                            </div>
+                            <div class="post_tag_wrap">
+                                @if($post->tag_3 != null)
+                                <p class="post_tag">{{ $post->tag_3 }}</p>
+                                @endif
+                            </div>
+                            
+                            <div class="post_tag_wrap">
+                                @if($post->tag_4 != null)
+                                <p class="post_tag">{{ $post->tag_4 }}</p>
+                                @endif
+                            </div>
+                        </div>
+                    </section>
+                    <!--ここに星評価を設定する予定-->
+                </a>
             </div>
+            @endforeach
+            @endif
         </div>
     </div>
 @endsection

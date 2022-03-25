@@ -17,7 +17,13 @@
     </header>
     <br>
     <div class="container">
-    @yield('content')
+        <div id="main_content_wrap">
+            <div id="content_wrap">
+                @include('left_menu')
+                @yield('content')
+                @include('right_menu')
+            </div>
+        </div>
   </div>
 </div>
     </div>
