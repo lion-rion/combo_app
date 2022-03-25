@@ -8,6 +8,7 @@
     <script src="{{ mix('js/sample.js') }}" defer></script>
     <script src="{{ mix('js/jquery.js') }}" defer></script>
     <link rel="stylesheet" href='/css/sample.css'>
+    <!--<link rel="stylesheet" href='/css/app.css'> bootstrapを使う場合に必要 -->
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
 </head>

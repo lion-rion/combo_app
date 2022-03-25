@@ -5,7 +5,7 @@
 <div class="post_content_wrap">
     <div class="post_image_wrap">
         <a href="{{ route('create') }}">
-            <img src="{{ asset('storage/img/post_image.png') }}" alt="">
+            <img src="{{ asset('image/post_image.png') }}" alt="">
         </a>
     </div>
     @foreach($posts as $post)
@@ -57,9 +57,12 @@
                     </div>
                 </div>
             </div>
+            
         </section>
         </a>
+        
     @endforeach
+    {{ $posts->links('pagination::semantic-ui') }}
     <!--
     <section class="search_window_wrap">
         <div class="search_window">
