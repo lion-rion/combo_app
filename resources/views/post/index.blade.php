@@ -3,6 +3,11 @@
 @section('content')
 <!--中央メニューのラップ-->
 <div class="post_content_wrap">
+    <div class="post_image_wrap">
+        <a href="{{ route('create') }}">
+            <img src="{{ asset('storage/img/post_image.png') }}" alt="">
+        </a>
+    </div>
     @foreach($posts as $post)
         <a class="post_section_link" href="/post/{{ $post->id }}">
         <section class="post_section_wrap">

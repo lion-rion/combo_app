@@ -15,7 +15,6 @@
     <header>
     @include('header')
     </header>
-    <br>
     <div class="container">
         <div id="main_content_wrap">
             <div id="content_wrap">
@@ -24,7 +23,7 @@
                 @include('right_menu')
             </div>
         </div>
-  </div>
+    </div>
 </div>
     </div>
     <footer>

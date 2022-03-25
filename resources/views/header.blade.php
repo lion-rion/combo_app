@@ -10,11 +10,10 @@
       <a href="{{ url('/login') }}"><i class="fa-solid fa-circle-user font_awesome_icon_margin"></i></a>
       @endguest
       @auth
-      <a href="{{ route('create') }}"><i class="fa-regular fa-pen-to-square font_awesome_icon_margin"></i></a>
       <div id="user_profile_img_wrap" class="user_profile_img_wrap">
         <a href="/{{ Auth::user()->id }}"><!--プロフィールに飛べるようにした ここはメニューを表示できるようにするから後日変更予定-->
-        <img class="user_profile_img" src="{{ asset('storage/profiles/'.Auth::user()->profile_image) }}" alt="プロフィール画像"><!--プロフ画像追加-->
-      </a>
+          <img class="user_profile_img" src="{{ asset('storage/profiles/'.Auth::user()->profile_image) }}" alt="プロフィール画像"><!--プロフ画像追加-->
+        </a>
       </div>
       <!--<a href="{{ url('/logout') }}">ログアウト</a>-->
       @endauth
@@ -30,13 +29,13 @@
 <div class="home_menu">
   <nav class="flex home_menu_nav">
     <div class="">
-      <a class="home_menu_nav_item" href="">ホーム</a>
+      <a class="home_menu_nav_item" href="{{route('posts')}}">ホーム</a>
     </div>
     <div class="">
       <a class="home_menu_nav_item" href=""><i class="fa-solid fa-magnifying-glass fa_p_margin"></i>検索</a>
     </div>
     <div class="">
-      <a class="home_menu_nav_item_last" href=""><i class="fa-regular fa-pen-to-square fa_p_margin"></i>投稿</a>
+      <a class="home_menu_nav_item_last" href="{{ route('create') }}"><i class="fa-regular fa-pen-to-square fa_p_margin"></i>投稿</a>
     </div>
   </nav>
 </div>

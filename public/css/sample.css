@@ -519,7 +519,6 @@
 }
 
 @media only screen and (max-width: 999px) {
-
     /*---------margin専用css---------*/
 
     .post_info {
@@ -563,13 +562,12 @@
         margin-right: 10px;
     }
 
-
-    .fa-angle-right{
+    .fa-angle-right {
         color: #0066cc;
         font-size: 14px;
     }
 
-    .notice_p{
+    .notice_p {
         padding-left: 10px;
         color: #0066cc;
         line-height: 22px;
@@ -577,12 +575,11 @@
         font-weight: bold;
     }
 
-    .notice_wrap{
+    .notice_wrap {
         padding: 5px;
     }
-    
-    .notice_container{
-        
+
+    .notice_container {
         font-weight: 700;
         font-size: 12px;
         height: auto;
@@ -591,10 +588,11 @@
         background-color: #fff;
         border-top: 1px solid #d9dde3;
         border-bottom: 1px solid #d9dde3;
-        
     }
     /*全体設定*/
-    
+    img {
+        width: 100%;
+    }
 
     /*検索設定*/
     .search_window_wrap {
@@ -608,6 +606,7 @@
     /*-----------------ヘッダー設定-------------------*/
 
     header {
+        margin-bottom: 10px;
         background: #37474f;
     }
     /*終了*/
@@ -638,7 +637,7 @@
         line-height: 1.4;
         text-shadow: 1px 1px 3px #000;
         font-weight: 700;
-        margin-right: 5px;
+        margin-right: 10px;
     }
 
     #title {
@@ -652,33 +651,30 @@
 
     /*--------------ナビメニュー---------------------*/
 
-    .main_header_wrap{
+    .main_header_wrap {
         background: #37474f;
     }
 
-
-    .home_menu{
+    .home_menu {
         background: #fff;
         box-shadow: 0 1px 1px 0 #e2e2e2, 0 1px 1px 0 #e2e2e2;
     }
 
-
     /*お知らせ設定*/
 
-    .fa-bell{
-
+    .fa-bell {
     }
 
-    .home_menu_nav{
+    .home_menu_nav {
         margin: 0 auto;
         justify-content: center;
-        
     }
 
-    .home_menu_nav_item{
+    .home_menu_nav_item {
         position: relative;
         display: inline-block;
-        font-family: system-ui,BlinkMacSystemFont,-apple-system-subset,Hiragino Kaku Gothic ProN,sans-serif!important;
+        font-family: system-ui, BlinkMacSystemFont, -apple-system-subset,
+            Hiragino Kaku Gothic ProN, sans-serif !important;
         width: 33vw;
         padding: 13px 0;
         text-align: center;
@@ -688,14 +684,15 @@
 
     /*お知らせ設定終了*/
 
-    .fa_p_margin{
+    .fa_p_margin {
         margin-right: 3px;
     }
 
-    .home_menu_nav_item_last{
+    .home_menu_nav_item_last {
         position: relative;
         display: inline-block;
-        font-family: system-ui,BlinkMacSystemFont,-apple-system-subset,Hiragino Kaku Gothic ProN,sans-serif!important;
+        font-family: system-ui, BlinkMacSystemFont, -apple-system-subset,
+            Hiragino Kaku Gothic ProN, sans-serif !important;
         width: 33vw;
         padding: 13px 0;
         font-weight: 600;
@@ -704,8 +701,8 @@
         font-size: 15px;
     }
 
-    .home_menu_nav_item::before{
-        content: '';
+    .home_menu_nav_item::before {
+        content: "";
         position: absolute;
         left: 100%;
         bottom: 16px;
@@ -714,11 +711,9 @@
         height: 18px;
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
-        background-color: #F2F2F2;
+        background-color: #f2f2f2;
         border-radius: 2px;
     }
-
-
 
     /*--------------全体設定-----------------*/
     .main_content_wrap {
@@ -786,9 +781,11 @@
     .post_section_wrap {
         width: 100vw;
         background-color: #fff;
-        margin-bottom: 10px;
+        margin-bottom: 7px;
+        margin-top: 7px;
         padding: 15px;
         box-sizing: border-box;
+        box-shadow: 0 1px 1px 0 #e2e2e2, 0 1px 1px 0 #e2e2e2;
     }
 
     .post_form_h2 {
@@ -925,7 +922,7 @@
         margin: 2px 7px 0 0;
     }
 
-    .font_awesome_icon_margin{
+    .font_awesome_icon_margin {
         margin: 0 10px;
     }
 
@@ -1147,14 +1144,12 @@
         background-color: #000;
     }
 
-    
-
     /*-------ユーザー設定--------*/
     .user_profile_img {
         border-radius: 50%;
-        margin: 0 0 0 6px;
-        height: 32px;
-        width: 32px;
+        height: 30px;
+        width: 30px;
+        margin-top: -3px;
     }
 
     .profile_card {
@@ -1197,7 +1192,9 @@
         box-sizing: border-box;
     }
 
-    
+    .post_image_wrap {
+        box-shadow: 0 1px 1px 0 #e2e2e2, 0 1px 1px 0 #e2e2e2;
+    }
     /*-------Twitter埋め込み設定----------*/
 }
 /*-------------アンカー設定------------*/
