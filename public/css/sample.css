@@ -546,17 +546,55 @@
 
     /*-------------並び替えの設定css終了-------------*/
 
+    /*---文字に関する設定------*/
+    .normal_p {
+        color: rgba(0, 0, 0, 0.8);
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    p {
+        padding: 0;
+        margin: 0 0 10px 0;
+    }
 
     /*投稿設定*/
     .post_info_item {
         margin-right: 10px;
     }
 
-    /*全体設定*/
-    p {
-        padding: 0;
-        margin: 0 0 10px 0;
+
+    .fa-angle-right{
+        color: #0066cc;
+        font-size: 14px;
     }
+
+    .notice_p{
+        padding-left: 10px;
+        color: #0066cc;
+        line-height: 22px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .notice_wrap{
+        padding: 5px;
+    }
+    
+    .notice_container{
+        
+        font-weight: 700;
+        font-size: 12px;
+        height: auto;
+        overflow: hidden;
+        font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+        background-color: #fff;
+        border-top: 1px solid #d9dde3;
+        border-bottom: 1px solid #d9dde3;
+        
+    }
+    /*全体設定*/
+    
 
     /*検索設定*/
     .search_window_wrap {
@@ -571,12 +609,6 @@
 
     header {
         background: #37474f;
-    }
-
-    /*--検索虫眼鏡の設定--*/
-    .fa-magnifying-glass {
-        font-size: 1.2rem;
-        margin-right: 10px;
     }
     /*終了*/
 
@@ -606,7 +638,7 @@
         line-height: 1.4;
         text-shadow: 1px 1px 3px #000;
         font-weight: 700;
-        padding: 0px 15px;
+        margin-right: 5px;
     }
 
     #title {
@@ -619,52 +651,74 @@
     }
 
     /*--------------ナビメニュー---------------------*/
-    #global_nav {
+
+    .main_header_wrap{
         background: #37474f;
-        display: flex;
+    }
+
+
+    .home_menu{
+        background: #fff;
+        box-shadow: 0 1px 1px 0 #e2e2e2, 0 1px 1px 0 #e2e2e2;
+    }
+
+
+    /*お知らせ設定*/
+
+    .fa-bell{
+
+    }
+
+    .home_menu_nav{
+        margin: 0 auto;
         justify-content: center;
+        
     }
 
-    .global_nav_item_wrapper {
-        width: 100vw;
-        display: flex;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 1.8;
-    }
-
-    .global_nav_item {
+    .home_menu_nav_item{
+        position: relative;
         display: inline-block;
-        padding-bottom: 4px;
-        position: relative;
+        font-family: system-ui,BlinkMacSystemFont,-apple-system-subset,Hiragino Kaku Gothic ProN,sans-serif!important;
+        width: 33vw;
+        padding: 13px 0;
+        text-align: center;
+        color: #111;
+        font-size: 15px;
     }
 
-    .global_nav_item::after {
-        background-color: rgb(255, 255, 255);
-        color: #fff;
-        bottom: 0;
-        content: "";
-        display: block;
-        height: 3px;
-        left: 0;
+    /*お知らせ設定終了*/
+
+    .fa_p_margin{
+        margin-right: 3px;
+    }
+
+    .home_menu_nav_item_last{
+        position: relative;
+        display: inline-block;
+        font-family: system-ui,BlinkMacSystemFont,-apple-system-subset,Hiragino Kaku Gothic ProN,sans-serif!important;
+        width: 33vw;
+        padding: 13px 0;
+        font-weight: 600;
+        text-align: center;
+        color: #1681b2;
+        font-size: 15px;
+    }
+
+    .home_menu_nav_item::before{
+        content: '';
         position: absolute;
-        transition: 0.5s all;
-        width: 0;
-    }
-    .global_nav_item:hover {
-        color: #fff;
+        left: 100%;
+        bottom: 16px;
+        display: inline-block;
+        width: 2px;
+        height: 18px;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        background-color: #F2F2F2;
+        border-radius: 2px;
     }
 
-    .global_nav_item:hover::after {
-        width: 100%;
-    }
 
-    .global_nav_item {
-        color: rgb(189, 188, 188);
-        padding: 8px 16px;
-        position: relative;
-        white-space: nowrap;
-    }
 
     /*--------------全体設定-----------------*/
     .main_content_wrap {
@@ -869,6 +923,10 @@
         font-size: 16px;
         color: rgba(0, 0, 0, 0.6);
         margin: 2px 7px 0 0;
+    }
+
+    .font_awesome_icon_margin{
+        margin: 0 10px;
     }
 
     /*------------フッター設定-------------*/
@@ -1139,11 +1197,7 @@
         box-sizing: border-box;
     }
 
-    .normal_p {
-        color: rgba(0, 0, 0, 0.8);
-        font-size: 15px;
-        line-height: 1.5;
-    }
+    
     /*-------Twitter埋め込み設定----------*/
 }
 /*-------------アンカー設定------------*/
