@@ -5,13 +5,12 @@
       <a href="https://rust-wiki.net/"><h1 id="title">格ゲー総合攻略</h1></a> 
     </div>
     <div id="header-end" class="flex">
+      <a href="#1"><i class="fa-solid fa-magnifying-glass font_awesome_icon_margin"></i></a>
       @guest <!--ログインしていなかったら表示-->
-      <a href="{{ url('/login') }}">ログイン</a>
+      <a href="{{ url('/login') }}"><i class="fa-solid fa-circle-user font_awesome_icon_margin"></i></a>
       @endguest
-
-      <a href="#1"><i class="fa-solid fa-magnifying-glass"></i></a>
-      <a href="{{ route('create') }}"><i class="fa-regular fa-pen-to-square"></i></a>
       @auth
+      <a href="{{ route('create') }}"><i class="fa-regular fa-pen-to-square font_awesome_icon_margin"></i></a>
       <div id="user_profile_img_wrap" class="user_profile_img_wrap">
         <a href="/{{ Auth::user()->id }}"><!--プロフィールに飛べるようにした ここはメニューを表示できるようにするから後日変更予定-->
         <img class="user_profile_img" src="{{ asset('storage/profiles/'.Auth::user()->profile_image) }}" alt="プロフィール画像"><!--プロフ画像追加-->
