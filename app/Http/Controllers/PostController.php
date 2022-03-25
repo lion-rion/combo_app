@@ -128,7 +128,7 @@ class PostController extends Controller
 
 
     /*------検索機能-----*/
-    public function serch(Request $request) {
+    public function search(Request $request) {
         //dd($request);
         $keyword_title = $request->title;
         $keyword_char = $request->char;
@@ -181,10 +181,10 @@ class PostController extends Controller
 
         if(empty($posts)) {
             $message = "検索結果はありません。";
-            return view('post.serch')->with('message',$message);
+            return view('post.search')->with('message',$message);
         }
 
-        return view('post.serch')->with([
+        return view('post.search')->with([
           'posts' => $posts
         ]);
 
@@ -201,7 +201,7 @@ class PostController extends Controller
         
   }
 
-  public function search(Request $request) {
+  public function search_page(Request $request) {
     return view('post.search');
     }
 }
