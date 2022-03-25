@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('search','App\Http\Controllers\PostController@search')->name('search');
     Route::get('search_page','App\Http\Controllers\PostController@search_page')->name('search_page');
 
-    Route::get('/{id}','App\Http\Controllers\ProfileController@user_profile')->name('user_profile');
+    Route::get('/profile/{id}','App\Http\Controllers\ProfileController@user_profile')->name('user_profile');
     Route::resource('user', 'App\Http\Controllers\UserController');
 });
 
