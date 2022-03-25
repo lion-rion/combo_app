@@ -519,13 +519,33 @@
 }
 
 @media only screen and (max-width: 999px) {
+
+    /*---------margin専用css---------*/
+
     .post_info {
         margin-bottom: 8px;
     }
 
+    /*---------margin専用css終了---------*/
+
+    /*-------------並び替えの設定css----------------*/
+
     .flex {
         display: flex;
     }
+
+    .flex_wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .flex_space_between {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*-------------並び替えの設定css終了-------------*/
+
 
     /*投稿設定*/
     .post_info_item {
@@ -804,17 +824,8 @@
     }
 
     /*--------タグ入力フォーム-----------*/
-    .tag_input_form {
-        display: flex;
-    }
-
     .search_button {
         margin: 0 auto !important;
-    }
-
-    .flex_wrap {
-        display: flex;
-        flex-wrap: wrap;
     }
 
     .tag_1 {
@@ -1078,10 +1089,7 @@
         background-color: #000;
     }
 
-    .flex_space_between {
-        display: flex;
-        justify-content: space-between;
-    }
+    
 
     /*-------ユーザー設定--------*/
     .user_profile_img {
