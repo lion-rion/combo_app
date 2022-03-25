@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->string('profile_image')->default('default.png');
-            $table->string('profile_text');
         });
     }
 
@@ -30,7 +29,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->string('profile_image');
-            $table->string('profile_text');
+            
         });
     }
 };
