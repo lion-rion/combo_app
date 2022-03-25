@@ -11,7 +11,7 @@
       @endguest
       @auth
       <div id="user_profile_img_wrap" class="user_profile_img_wrap">
-        <a href="/{{ Auth::user()->id }}"><!--プロフィールに飛べるようにした ここはメニューを表示できるようにするから後日変更予定-->
+        <a href="/profile/{{ Auth::user()->id }}"><!--プロフィールに飛べるようにした ここはメニューを表示できるようにするから後日変更予定-->
           <img class="user_profile_img" src="{{ asset('storage/profiles/'.Auth::user()->profile_image) }}" alt="プロフィール画像"><!--プロフ画像追加-->
         </a>
       </div>
