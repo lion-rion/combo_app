@@ -1,9 +1,13 @@
 function selectboxChange() {
     target = document.getElementById("output");
-    selindex = document.getElementById('Select1').selectedIndex;
+    const selindex = document.getElementById('Select1').value;
+    if(selindex == "リュウ"){
+      target.innerHTML = '<div class="combo_button_wrap"><input class="combo_button" type="button" value="→" onclick="OnButtonClickA();"/><input class="combo_button" type="button" value="垂直J" onclick="OnButtonClickB();"/><input class="combo_button" type="button" value="前J" onclick="OnButtonClickC();"/><input class="combo_button" type="button" value="後J" onclick="OnButtonClickD();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/></div>';
+    }
+    /*
     switch (selindex) {
       case 1:
-        target.innerHTML = '<div class="combo_button_wrap"><input class="combo_button" type="button" value="→" onclick="OnButtonClickA();"/><input class="combo_button" type="button" value="垂直J" onclick="OnButtonClickB();"/><input class="combo_button" type="button" value="前J" onclick="OnButtonClickC();"/><input class="combo_button" type="button" value="後J" onclick="OnButtonClickD();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/></div>';
+        
         break;
       case 2:
         target.innerHTML = '<input type="button" value="Exec" onclick="OnButtonClickA();"/>';
@@ -18,6 +22,12 @@ function selectboxChange() {
         target.innerHTML = "要素5が選択されています。<br/>";
         break;
     }
+    */
+}
+
+function selectboxChange2() {
+  target = document.getElementById("output");
+  target.innerHTML ='';
 }
 
 function OnButtonClickA() {

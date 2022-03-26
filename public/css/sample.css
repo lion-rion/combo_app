@@ -381,10 +381,6 @@
     }
 
     /*--------------ボタン設定--------------------*/
-    .combo_button_wrap {
-        display: flex;
-        justify-content: center;
-    }
 
     .combo_button {
         margin: 0 5px;
@@ -779,7 +775,6 @@
     }
 
     .post_section_wrap {
-        width: 100vw;
         background-color: #fff;
         margin-top: 10px;
         padding: 15px;
@@ -982,11 +977,12 @@
     /*--------------ボタン設定--------------------*/
     .combo_button_wrap {
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .combo_button {
-        margin: 0 5px;
+        padding: 10px;
+        margin: 3px 5px;
         text-align: center;
         width: 70px;
         color: #fff;
@@ -1001,6 +997,24 @@
         color: #fff;
         background: #f56500;
         border-bottom: 2px solid #b84c00;
+    }
+
+    .search_button_container {
+        justify-content: center;
+    }
+
+    .search_button_wrap {
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px !important;
+    }
+
+    .combo_button_display {
+        cursor: pointer;
+        padding: 5px 5px 5px 5px;
+        background: #ffffff;
+        color: #242323;
+        font-size: 13px;
     }
 
     /*input設定*/
@@ -1228,7 +1242,49 @@
     .paginationWrap {
         background: #fff;
     }
-    /*-------Twitter埋め込み設定----------*/
+    /*-------検索ウィンドの設定----------*/
+
+    .search_window {
+        display: none;
+    }
+    /*検索ウィンドのアコーディオンメニュー*/
+    details {
+        border: 1px solid #ccc;
+    }
+    details:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    /**
+       * list-style: none; ←デフォルト三角削除（Chrome非対応）
+       * cursor: pointer; ←カーソルをポインターに
+      **/
+    details summary {
+        list-style: none;
+        cursor: pointer;
+        padding: 5px 5px 5px 10px;
+        background: #ffffff;
+        color: #242323;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    /**
+       * Chrome用のデフォルト三角削除
+      **/
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+    /**
+       * Font Awesomeのプラスアイコン使用
+      **/
+    /**
+       * アコーディオンがオープン時はマイナスアイコンに変更
+      **/
+
+    details p {
+        margin: 0;
+        padding: 5px;
+    }
 }
 /*-------------アンカー設定------------*/
 html {

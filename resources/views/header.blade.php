@@ -32,7 +32,7 @@
       <a class="home_menu_nav_item" href="{{route('posts')}}">ホーム</a>
     </div>
     <div class="">
-      <a class="home_menu_nav_item" href=""><i class="fa-solid fa-magnifying-glass fa_p_margin"></i>検索</a>
+      <a class="home_menu_nav_item" href="/search"><i class="fa-solid fa-magnifying-glass fa_p_margin"></i>検索</a>
     </div>
     <div class="">
       <a class="home_menu_nav_item_last" href="{{ route('create') }}"><i class="fa-regular fa-pen-to-square fa_p_margin"></i>投稿</a>
