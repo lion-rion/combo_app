@@ -62,7 +62,7 @@
         </a>
         
     @endforeach
-    {{ $posts->links('pagination::semantic-ui') }}
+    {{ $posts->links('pagination::default') }}
     <!--
     <section class="search_window_wrap">
         <div class="search_window">

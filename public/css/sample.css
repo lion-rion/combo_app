@@ -562,7 +562,7 @@
         margin-right: 10px;
     }
 
-    .fa-angle-right {
+    .fa-angle-right-blue {
         color: #0066cc;
         font-size: 14px;
     }
@@ -781,8 +781,7 @@
     .post_section_wrap {
         width: 100vw;
         background-color: #fff;
-        margin-bottom: 7px;
-        margin-top: 7px;
+        margin-top: 10px;
         padding: 15px;
         box-sizing: border-box;
         box-shadow: 0 1px 1px 0 #e2e2e2, 0 1px 1px 0 #e2e2e2;
@@ -1194,6 +1193,40 @@
 
     .post_image_wrap {
         box-shadow: 0 1px 1px 0 #e2e2e2, 0 1px 1px 0 #e2e2e2;
+    }
+
+    /*-------ページネーション設定----*/
+    .pagination {
+        display: flex;
+        justify-content: center;
+        padding: 20px 20px;
+    }
+
+    .pagination_p {
+        font-size: 14px;
+        padding: 0 30px;
+    }
+
+    .pagination_none_2 {
+        padding: 10px 15px 8px 20px;
+    }
+
+    .pagination_none_1 {
+        padding: 10px 20px 8px 15px;
+    }
+
+    .pagination_a {
+        padding: 10px 15px 8px 15px;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .pagination_button {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 18px;
+    }
+
+    .paginationWrap {
+        background: #fff;
     }
     /*-------Twitter埋め込み設定----------*/
 }
