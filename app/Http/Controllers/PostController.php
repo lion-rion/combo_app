@@ -141,12 +141,14 @@ class PostController extends Controller
         //$keyword_tag_3 = $request->tag_3;
         //$keyword_tag_4 = $request->tag_4;
 
+        /*
         if(empty($keyword_min_damage)){ //最小ダメージ部分がnullの場合は0にする
             $keyword_min_damage = 0;
         }
         if(empty($keyword_max_damage)){
             $keyword_max_damage = 9999; //最小ダメージ部分がnullの場合は0にする
         }
+        */
         $posts = Post::query()
         ->when($keyword_title, function ($q) use ($keyword_title) {
             $q->where('title', 'like', '%' . $keyword_title . '%');
@@ -163,7 +165,7 @@ class PostController extends Controller
         })->when($keyword_tag_1, function ($q) use ($keyword_tag_1) {
             $q->where('tag_1', 'like', '%' . $keyword_tag_1 . '%')->orwhere('tag_2', 'like', '%' . $keyword_tag_1 . '%')
             ->orwhere('tag_3', 'like', '%' . $keyword_tag_1 . '%')->orwhere('tag_4', 'like', '%' . $keyword_tag_1 . '%');
-        })->get();
+        })->paginate(5);
 
         //複数カラムから検索する場合はorwhere句を使う
         
@@ -178,14 +180,14 @@ class PostController extends Controller
             $q->where('title', 'like', '%' . $keyword_tag_4 . '%');
         })
         */ 
-
         if(empty($posts)) {
             $message = "検索結果はありません。";
             return view('post.search')->with('message',$message);
         }
 
-        return view('post.search')->with([
-          'posts' => $posts
+        return view('post.search', [
+          'posts' => $posts,
+          'request' => $request
         ]);
 
         /*
@@ -200,8 +202,4 @@ class PostController extends Controller
         
         
   }
-
-  public function search_page(Request $request) {
-    return view('post.search');
-    }
 }
