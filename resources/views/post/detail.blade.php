@@ -7,7 +7,8 @@
     <div class="post_info_wrap">
       <!--投稿者情報を記載(アイコンを追加したらよさそう)-->
       <div class="flex post_info">
-        <p><span>@</span>{{ $post->user->name }}</p>
+        <a href="/profile/{{ $post->user->id }}"><img class="user_image" src="{{ asset('image/'.$post->user->profile_image) }}" alt=""><!--プロフ画像追加--></a>
+        <a href="/profile/{{ $post->user->id }}"><p class="user_id"><span>@</span>{{ $post->user->name }}</a></p>
       </div>
       <div class="post_info flex created_post">
         <p class="created_at_p">投稿日 <time datetime="{{ $post->created_at}}">{{ $post->created_at->format('Y年m月d日')}}</time></p>
@@ -103,8 +104,12 @@
         @foreach ($post->comments as $comment)
           <div class="comment_list">
             <div class="post_info flex_space_between created_post">
-              <p><span>@</span>{{ $post->user->name }}</p>
-              <img src="{{ asset('storage/profiles/'.$post->user->profile_image) }}" alt="プロフィール画像"><!--プロフ画像追加-->
+              <!--aタグでユーザー情報に飛べるように設定(OK)-->
+              <!--削除ボタン通報ボタンを設定したい-->
+              <div class="flex comment_user_wrap">
+                <a href="/profile/{{$comment->user->id}}"><img class="user_image" src="{{ asset('image/'.$comment->user->profile_image) }}" alt=""></a><!--プロフ画像追加-->
+                <p class="user_id"><a href="/profile/{{$comment->user->id}}"><span>@</span>{{ $post->user->name }}</a></p>
+              </div>
               <p>{{ $post->created_at->format('Y-m-d h:m')}}</p>
             </div>
             <div class="comment_wrap">

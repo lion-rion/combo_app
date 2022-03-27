@@ -658,9 +658,6 @@
 
     /*お知らせ設定*/
 
-    .fa-bell {
-    }
-
     .home_menu_nav {
         margin: 0 auto;
         justify-content: center;
@@ -1137,6 +1134,11 @@
     }
 
     /*-------コメラン設定---------*/
+
+    .user_id {
+        color: #0066cc;
+    }
+
     .post_comment_h2 {
         color: #333;
         padding: 20px 0px 5px 0px;
@@ -1158,6 +1160,16 @@
     }
 
     /*-------ユーザー設定--------*/
+
+    .user_image {
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-right: 8px;
+    }
+
     .user_profile_img {
         border-radius: 50%;
         height: 30px;
@@ -1247,43 +1259,46 @@
     .search_window {
         display: none;
     }
-    /*検索ウィンドのアコーディオンメニュー*/
-    details {
-        border: 1px solid #ccc;
-    }
-    details:not(:last-child) {
-        margin-bottom: 10px;
+    /*ソートボタンの設定*/
+    .sort_form_wrap {
+        background-color: #fff;
+        margin-bottom: -10px;
+        padding-bottom: 5px;
     }
 
-    /**
-       * list-style: none; ←デフォルト三角削除（Chrome非対応）
-       * cursor: pointer; ←カーソルをポインターに
-      **/
-    details summary {
-        list-style: none;
-        cursor: pointer;
-        padding: 5px 5px 5px 10px;
-        background: #ffffff;
-        color: #242323;
-        font-size: 15px;
-        font-weight: bold;
+    .sort_button_container {
+        margin: 10px 15px 10px 15px;
+        padding: 10px 10px 10px 0px;
+        border-bottom: 1px solid #d9dde3;
     }
-    /**
-       * Chrome用のデフォルト三角削除
-      **/
-    details summary::-webkit-details-marker {
-        display: none;
-    }
-    /**
-       * Font Awesomeのプラスアイコン使用
-      **/
-    /**
-       * アコーディオンがオープン時はマイナスアイコンに変更
-      **/
 
-    details p {
-        margin: 0;
-        padding: 5px;
+    .sort_button_wrap {
+        margin-right: 10px;
+    }
+
+    .sort_button_on {
+        background-color: #f39339;
+        border-color: #f39339;
+        color: #fff;
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 100px;
+        font-weight: 700;
+        text-align: center;
+        border: 1px solid #ddd;
+        font-size: 12px;
+    }
+
+    .sort_button {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 100px;
+        font-weight: 700;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        color: #333;
+        font-size: 12px;
     }
 }
 /*-------------アンカー設定------------*/

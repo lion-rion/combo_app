@@ -11,9 +11,11 @@ use App\Http\Requests\PostRequest;
 class PostController extends Controller
 {
     //レシピ一覧
-    public function show(){
-        
-        $posts = Post::paginate(5);
+    public function show(Request $request){
+    
+        //ビュー数の設定をしてあげなきゃいけないのにできてないです。
+        $posts = Post::orderBy('created_at', 'asc')->paginate(5);
+        $posts->sort = $request->sort_name;
         // dd($blogs); これを使うと$blogsの中身を見ることができる
         return view('post.index',['posts' => $posts]);
     }

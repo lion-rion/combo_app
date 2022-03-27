@@ -8,6 +8,28 @@
             <img src="{{ asset('image/post_image.png') }}" alt="">
         </a>
     </div>
+    <div class="sort_form_wrap">
+        <form method="GET" action="{{ route('posts') }}">
+            <div class="flex sort_button_container">
+                <!--おすすめ順の設定が終わってないです-->
+                @if($posts->sort == null)
+                <div class="sort_button_wrap">
+                    <button class="sort_button_on" type="submit"><input type="hidden" name="sort_name" value="">新着順</button>
+                </div>
+                <div class="sort_button_wrap">
+                    <button class="sort_button" type="submit"><input type="hidden" name="sort_name" value="view_count_sort">おすすめ</button>
+                </div>
+                @else
+                <div class="sort_button_wrap">
+                    <button class="sort_button" type="submit"><input type="hidden" name="sort_name" value="">新着順</button>
+                </div>
+                <div class="sort_button_wrap">
+                    <button class="sort_button_on" type="submit"><input type="hidden" name="sort_name" value="">おすすめ</button>
+                </div>
+                @endif
+            </div>
+        </form>
+    </div>
     @foreach($posts as $post)
         <a class="post_section_link" href="/post/{{ $post->id }}">
         <section class="post_section_wrap">

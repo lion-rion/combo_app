@@ -81,10 +81,10 @@
                 <div class="post_info">
                     <p class="post_form_upper_p">タグ</p>
                     <div class="flex_wrap"  action="">
-                        <input name="tag_1" class="tag_1" value="{{ $request->tag_1 }}" type="text" placeholder="簡単" >
-                        <input name="tag_2" class="tag_1" value="{{ $request->tag_2 }}" type="text" placeholder="初心者" >
-                        <input name="tag_3" class="tag_1" value="{{ $request->tag_3 }}" type="text" placeholder="動画リンク有" >
-                        <input name="tag_4" class="tag_1" value="{{ $request->tag_4 }}" type="text" placeholder="エイジス" >
+                        <input name="tag_1" class="tag_1" value="{{ $request->tag_1 }}" type="text" placeholder="例 : 簡単" >
+                        <input name="tag_2" class="tag_1" value="{{ $request->tag_2 }}" type="text" placeholder="例 : 初心者" >
+                        <input name="tag_3" class="tag_1" value="{{ $request->tag_3 }}" type="text" placeholder="例 : 動画リンク有" >
+                        <input name="tag_4" class="tag_1" value="{{ $request->tag_4 }}" type="text" placeholder="例 : エイジス" >
                     </div>
                 </div>
                 <div class="flex">
