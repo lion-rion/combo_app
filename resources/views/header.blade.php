@@ -5,15 +5,26 @@
       <a href="{{route('posts')}}"><h1 id="title">格ゲー総合攻略</h1></a> 
     </div>
     <div id="header-end" class="flex">
-      <a href="#1"><i class="fa-solid fa-magnifying-glass font_awesome_icon_margin"></i></a>
+      <a class="header_search_button_wrap" href="#1">
+        <i class="fa-solid fa-magnifying-glass header_search_button"></i>
+      </a>
       @guest <!--ログインしていなかったら表示-->
-      <a href="{{ url('/login') }}"><i class="fa-solid fa-circle-user font_awesome_icon_margin"></i></a>
+      <a href="{{ url('/login') }}"><i class="fa-solid fa-circle-user header_login_button"></i></a>
       @endguest
       @auth
       <div id="user_profile_img_wrap" class="user_profile_img_wrap">
-        <a href="/profile/{{ Auth::user()->id }}"><!--プロフィールに飛べるようにした ここはメニューを表示できるようにするから後日変更予定-->
+        
           <img class="user_profile_img" src="{{ asset('image/'.Auth::user()->profile_image) }}" alt="プロフィール画像"><!--プロフ画像追加-->
-        </a>
+        
+        <div id="profile_menu_wrap">
+          <div class="profile_menu">
+            <a href="/profile/{{ Auth::user()->id }}">マイページ</a>
+            <a href="">保存リスト</a>
+            <a href="">設定</a>
+            <div class="profile_menu_under_bar"></div>
+            <a href="/logout">ログアウト</a>
+          </div>
+        </div>
       </div>
       <!--<a href="{{ url('/logout') }}">ログアウト</a>-->
       @endauth

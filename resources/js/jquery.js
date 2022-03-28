@@ -8,3 +8,12 @@ $('#search-text').focus();//テキスト入力のinputにフォーカス
 $(".close-btn").click(function () {
   $("#search-wrap").removeClass('panelactive');//#search-wrapからpanelactiveクラスを除去
 });
+
+document.addEventListener('click',e=>{
+      const t=e.target;
+      if(t.closest('.user_profile_img_wrap')){
+        profile_menu_wrap.classList.toggle('display');
+      }else if(!t.closest('.display')){
+        profile_menu_wrap.classList.remove('display');
+      }
+});
