@@ -1,11 +1,11 @@
 <div class="main_header_wrap">
   <div class="main-header">
     <div id="header-start">
-      <a href="{{route('posts')}}"><img class="header-icon" src="https://rust-wiki.net/some/img/icon/DzrVneqUcAARoIa.png" loading="" alt=""></a>
+      <a href="{{route('posts')}}"><img class="header-icon" src="{{ asset('image/DzrVneqUcAARoIa.png') }}" loading="" alt=""></a>
       <a href="{{route('posts')}}"><h1 id="title">格ゲー総合攻略</h1></a> 
     </div>
     <div id="header-end" class="flex">
-      <a class="header_search_button_wrap" href="#1">
+      <a class="header_search_button_wrap" href="/search">
         <i class="fa-solid fa-magnifying-glass header_search_button"></i>
       </a>
       @guest <!--ログインしていなかったら表示-->
