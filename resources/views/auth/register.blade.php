@@ -3,10 +3,13 @@
     <x-auth-card>
         <x-slot name="logo">
         </x-slot>
-
+        <div class="login_flex login_logo_wrap">
+            <img class="login_logo" src="{{ asset('image/DzrVneqUcAARoIa.png') }}" alt="">
+            <h2 class="login_h2">新規登録メニュー</h2>
+        </div>
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="auth_input_container" :errors="$errors" />
-
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        
         <form method="POST" action="{{ route('register') }}">
             @csrf
 

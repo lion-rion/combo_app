@@ -6,12 +6,17 @@
             </a>
         </x-slot>
 
+        <div class="login_flex login_logo_wrap">
+            <img class="login_logo" src="{{ asset('image/DzrVneqUcAARoIa.png') }}" alt="">
+            <h2 class="login_h2">ログインメニュー</h2>
+        </div>
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
+        
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
@@ -29,19 +34,23 @@
             </div>
 
             <!-- Remember Me -->
-            <div class="block mt-4">
+            <div class="remember_menu_wrap">
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
                     <span class="ml-2 text-sm text-gray-600">{{ __('ログイン状態を維持') }}</span>
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="remember_menu_wrap">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                    <a class="forget_password" href="{{ route('password.request') }}">
                         {{ __('パスワードを忘れましたか？') }}
-                    </a>
+                    </a><br>
                 @endif
+                <br>
+                <a class="forget_password" href="{{ route('register') }}">
+                    {{ __('既にアカウントをお持ちですか？') }}
+                </a>
                 <div class="register_button_wrap">
                     <x-button class="register_button">
                         {{ __('ログイン') }}
