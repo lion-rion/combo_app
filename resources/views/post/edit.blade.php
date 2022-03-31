@@ -87,10 +87,7 @@
             </div>
         </div>
         <div class="mt-5">
-            <a class="btn btn-secondary" href="{{ route('posts') }}">
-                キャンセル
-            </a>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="submit_button">
                 更新する
             </button>
         </div>

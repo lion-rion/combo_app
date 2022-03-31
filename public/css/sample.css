@@ -865,6 +865,7 @@
         cursor: pointer;
         display: flex;
         font-size: 15px;
+        width: 100%;
         line-height: 1.8;
         padding: 4px 16px;
         font-family: system-ui, BlinkMacSystemFont, -apple-system-subset,
@@ -894,17 +895,8 @@
         font-size: 17px;
     }
 
-    #comment_delete_wrap {
-        background-color: #fff;
-        box-shadow: 0px 1px 4px rgb(0 0 0 / 14%);
-        display: block;
-        min-width: 260px;
-        padding: 16px 0;
-        position: absolute;
-        top: 820px;
-        max-width: calc(100vw - 32px);
-        right: 10px;
-        z-index: 100;
+    .comment_icon_wrap {
+        margin-left: 10px;
     }
 }
 /*-------------アンカー設定------------*/
