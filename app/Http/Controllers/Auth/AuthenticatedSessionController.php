@@ -32,7 +32,8 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $path = \Session::pull('url.intended'); //ログイン後のリダイレクトを直前のページにする
+        return redirect($path);
     }
 
     /**

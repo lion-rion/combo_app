@@ -9,7 +9,7 @@
         <i class="fa-solid fa-magnifying-glass header_search_button"></i>
       </a>
       @guest <!--ログインしていなかったら表示-->
-      <a href="{{ url('/login') }}"><i class="fa-solid fa-circle-user header_login_button"></i></a>
+      <a href="{{ url('/register') }}"><i class="fa-solid fa-circle-user header_login_button"></i></a>
       @endguest
       @auth
       <div id="user_profile_img_wrap" class="user_profile_img_wrap">

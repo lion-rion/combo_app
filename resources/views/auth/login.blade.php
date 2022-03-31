@@ -49,7 +49,7 @@
                 @endif
                 <br>
                 <a class="forget_password" href="{{ route('register') }}">
-                    {{ __('既にアカウントをお持ちですか？') }}
+                    {{ __('新規登録はこちら！') }}
                 </a>
                 <div class="register_button_wrap">
                     <x-button class="register_button">

@@ -1,4 +1,5 @@
 @extends('layout')
+@section('title', 'コンボ検索')
 @section('content')
 <div class="main_content_wrap">
     @if (session('err_msg'))

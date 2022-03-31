@@ -39,7 +39,11 @@
                                 type="password"
                                 name="password_confirmation" required />
             </div>
-
+            <div class="remember_menu_wrap">
+                <a class="forget_password" href="{{ route('login') }}">
+                    {{ __('既にアカウントをお持ちですか？') }}
+                </a>
+            </div>
             <div class="register_button_wrap">
                 <x-button class="register_button">
                    規約に同意して登録する
