@@ -6,9 +6,33 @@
   <section class="post_section_wrap">
     <div class="post_info_wrap">
       <!--投稿者情報を記載(アイコンを追加したらよさそう)-->
-      <div class="flex post_info">
-        <a href="/profile/{{ $post->user->id }}"><img class="user_image" src="{{ asset('image/'.$post->user->profile_image) }}" alt=""><!--プロフ画像追加--></a>
-        <a href="/profile/{{ $post->user->id }}"><p class="user_id"><span>@</span>{{ $post->user->name }}</a></p>
+      <div class="flex_space_between" >
+        <div class="flex post_info">
+          <a href="/profile/{{ $post->user->id }}"><img class="user_image" src="{{ asset('image/'.$post->user->profile_image) }}" alt=""><!--プロフ画像追加--></a>
+          <a href="/profile/{{ $post->user->id }}"><p class="user_id"><span>@</span>{{ $post->user->name }}</a></p>
+        </div>
+        <div class="report_wrap tententen_wrap">
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <div id="report_menu_wrap">
+          <div class="report_menu">
+            @auth
+            @if(Auth::user()->id === $post->user_id)
+            <button type="button" onclick="location.href='/post/edit/{{ $post->id }}'">編集</button>
+            @endif
+            @endauth
+            @auth
+            @if(Auth::user()->id === $post->user_id)
+            <form method="POST" action="{{ route('delete', $post->id) }}" onSubmit="return checkDelete()">
+                @csrf
+                <button type="submit">削除</button>
+            </form>
+            @endif
+            @endauth
+            <!--<div class="profile_menu_under_bar"></div>アンダーバー-->
+            <a href="/report">報告</a>
+          </div>
+        </div>
       </div>
       <div class="post_info flex created_post">
         <p class="created_at_p">投稿日 <time datetime="{{ $post->created_at}}">{{ $post->created_at->format('Y年m月d日')}}</time></p>
@@ -74,19 +98,7 @@
       -->
     </section>
     <section>
-      @auth
-      @if(Auth::user()->id === $post->user_id)
-      <button type="button" class="edit_button" onclick="location.href='/post/edit/{{ $post->id }}'">編集</button>
-      @endif
-      @endauth
-      @auth
-      @if(Auth::user()->id === $post->user_id)
-      <form method="POST" action="{{ route('delete', $post->id) }}" onSubmit="return checkDelete()">
-          @csrf
-          <button type="submit" class="delete_button">削除</button>
-      </form>
-      @endif
-      @endauth
+      
     </div>
     </section>
   </section>
@@ -108,20 +120,30 @@
               <!--削除ボタン通報ボタンを設定したい-->
               <div class="flex comment_user_wrap">
                 <a href="/profile/{{$comment->user->id}}"><img class="user_image" src="{{ asset('image/'.$comment->user->profile_image) }}" alt=""></a><!--プロフ画像追加-->
-                <p class="user_id"><a href="/profile/{{$comment->user->id}}"><span>@</span>{{ $post->user->name }}</a></p>
+                <p class="user_id"><a href="/profile/{{$comment->user->id}}"><span>@</span>{{ $comment->user->name }}</a></p>
               </div>
-              <p>{{ $post->created_at->format('Y-m-d h:m')}}</p>
+              <div class="flex" > 
+                <p class="comment_time">{{ $post->created_at->format('Y-m-d h:m')}}</p>
+                <div class="tententen_wrap">
+                  <a class="comment_delete_button"  href="#1"><i class="fa-solid fa-ellipsis"></i></a>
+                </div>
+                <div id="comment_delete_wrap" id="1">
+                  <div class="report_menu">
+                    @if ($comment->user->id == Auth::id()) <!--コメント投稿ユーザーと見てるユーザーが同じなら削除ボタンを設ける-->
+                      <a class="delete-comment" data-remote="true" rel="nofollow" data-method="delete" href="/comments/{{ $comment->id }}">削除</a>
+                    @endif
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="comment_wrap">
               <span>{{ $comment->comment }}</span>
             </div>
-              @if ($comment->user->id == Auth::id()) <!--コメント投稿ユーザーと見てるユーザーが同じなら削除ボタンを設ける-->
-                  <a class="delete-comment" data-remote="true" rel="nofollow" data-method="delete" href="/comments/{{ $comment->id }}">
-                  </a>
-              @endif
           </div>
         @endforeach
       </div>
+
+      <!--ログインしてコメントしよう画像を追加する予定-->
       @guest
       <div class="guest_comment_form">
         <form id="new_comment" action="/post/{{ $post->id }}/comments" method="POST">
@@ -148,7 +170,7 @@
   </section>
 <script>
   function checkDelete(){
-  if(window.confirm('この記事を投稿してよろしいですか？削除した投稿は復旧できません。')){
+  if(window.confirm('この記事を削除してよろしいですか？削除した投稿は復旧できません。')){
       return true;
   } else {
       return false;
