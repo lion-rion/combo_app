@@ -2,8 +2,21 @@ function selectboxChange() {
     target = document.getElementById("output");
     const selindex = document.getElementById('Select1').value;
     if(selindex == "リュウ"){
-      target.innerHTML = '<div class="combo_button_wrap"><input class="combo_button" type="button" value="→" onclick="OnButtonClickA();"/><input class="combo_button" type="button" value="垂直J" onclick="OnButtonClickB();"/><input class="combo_button" type="button" value="前J" onclick="OnButtonClickC();"/><input class="combo_button" type="button" value="後J" onclick="OnButtonClickD();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/></div>';
+      target.innerHTML = '<div class="combo_button_wrap"><input class="combo_button" type="button" value="→" onclick="OnButtonClickA();"/><input class="combo_button" type="button" value="弱昇" onclick="OnButtonClick_zyaku_syoryuu();"/><input class="combo_button" type="button" value="前J" onclick="OnButtonClickC();"/><input class="combo_button" type="button" value="後J" onclick="OnButtonClickD();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/></div>';
     }
+
+    else if(selindex == "ケン"){
+      target.innerHTML = '<div class="combo_button_wrap"><input class="combo_button" type="button" value="垂直J" onclick="OnButtonClickB();"/><input class="combo_button" type="button" value="前J" onclick="OnButtonClickC();"/><input class="combo_button" type="button" value="後J" onclick="OnButtonClickD();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/></div>';
+    }
+
+    else if(selindex == "春麗"){
+      target.innerHTML = '<div class="combo_button_wrap"><input class="combo_button" type="button" value="垂直J" onclick="OnButtonClickB();"/><input class="combo_button" type="button" value="前J" onclick="OnButtonClickC();"/><input class="combo_button" type="button" value="後J" onclick="OnButtonClickD();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/></div>';
+    }
+    
+    else if(selindex == "春麗"){
+      target.innerHTML = '<div class="combo_button_wrap"><input class="combo_button" type="button" value="垂直J" onclick="OnButtonClickB();"/><input class="combo_button" type="button" value="前J" onclick="OnButtonClickC();"/><input class="combo_button" type="button" value="後J" onclick="OnButtonClickD();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/><input class="combo_button" type="button" value="大P" onclick="OnButtonClickE();"/></div>';
+    }
+
     /*
     switch (selindex) {
       case 1:
@@ -37,5 +50,20 @@ function OnButtonClickA() {
 function OnButtonClickB() {
     target = document.getElementById("combo_content");
     target.insertAdjacentHTML("beforeend",'');
+}
+
+function OnButtonClick_zyaku_syoryuu() {
+  target = document.getElementById("combo_content"); //combo_contentのvalueに"a"を追加する関数
+  target.value = target.value + "弱昇";
+}
+
+function OnButtonClick_tyu_syoryuu() {
+  target = document.getElementById("combo_content"); //combo_contentのvalueに"a"を追加する関数
+  target.value = target.value + "中昇";
+}
+
+function OnButtonClick_kyo_syoryuu() {
+  target = document.getElementById("combo_content"); //combo_contentのvalueに"a"を追加する関数
+  target.value = target.value + "強昇";
 }
 

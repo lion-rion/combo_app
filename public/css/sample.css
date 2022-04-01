@@ -931,6 +931,24 @@
         padding: 0;
     }
 
+    /*-------長めのボタン設定-------*/
+    .simple_long_button {
+        display: block;
+        margin: 0 auto;
+        color: rgb(82, 82, 82);
+        text-align: center;
+        border: 1px solid #1a75ff;
+        padding: 10px 10px;
+        font-weight: bold;
+        width: 170px;
+        border-radius: 3px;
+    }
+
+    .simple_long_button_wrap {
+        width: 100%;
+        margin-top: 20px;
+    }
+
 }
 /*-------------アンカー設定------------*/
 html {

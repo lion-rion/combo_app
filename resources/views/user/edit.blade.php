@@ -1,7 +1,7 @@
 <form method="post" action="{{ route('user.update', ['user' => $user->id]) }}" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
-    <img src="{{ asset('storage/profiles/'.$user->profile_image) }}" alt="プロフィール画像"><!--プロフ画像追加-->
+    <img src="{{ asset('image/'.$user->profile_image) }}" alt="プロフィール画像"><!--プロフ画像追加-->
     <label for="profile_image">プロフィール画像</label>
     <label for="profile_image" class="btn">
       <img src="{{ asset('storage/profiles/'.$user->profile_image) }}" id="img">
