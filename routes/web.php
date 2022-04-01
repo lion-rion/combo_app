@@ -33,15 +33,16 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/post/delete/{id}', 'App\Http\Controllers\PostController@exeDelete')->name('delete');
 
     Route::get('search','App\Http\Controllers\PostController@search')->name('search');
+    Route::get('search/{char}','App\Http\Controllers\PostController@search')->name('search_char');
 
     Route::get('/profile/{id}','App\Http\Controllers\ProfileController@user_profile')->name('user_profile');
+
     Route::resource('user', 'App\Http\Controllers\UserController');
+    
+    Route::post('/post/{comment_id}/comments','App\Http\Controllers\CommentsController@store');
+
+    //コメント取消処理
+    Route::get('/comments/{comment_id}', 'App\Http\Controllers\CommentsController@destroy');
 });
-
-Route::post('/post/{comment_id}/comments','App\Http\Controllers\CommentsController@store');
-
-//コメント取消処理
-Route::get('/comments/{comment_id}', 'App\Http\Controllers\CommentsController@destroy');
-
 
 require __DIR__.'/auth.php';

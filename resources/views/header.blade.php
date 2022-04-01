@@ -33,7 +33,7 @@
 </div>
 <div class="notice_container">
   <div class="flex_space_between notice_wrap">
-    <p class="notice_p"><i class="fa-solid fa-bell"> 総合攻略からお知らせ</i></p>
+    <p class="notice_p"><i class="fa-solid fa-bell"> 総合攻略からお知らせ（工事中）</i></p>
     <p>詳細 <i class="fa-solid fa-angle-right"></i></p>
   </div>
 </div>
