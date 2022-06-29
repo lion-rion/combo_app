@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id(); 
             $table->text('char'); //キャラクター選択
-            $table->integer('damage'); //ダメージ
+            $table->integer('damage')->nullable(); //ダメージ
             $table->string('title',100); //タイトル・コンボの名前など
             $table->text('combo_content'); //コンボ内容
             $table->text('advise')->nullable(); //アドバイス・コツなど
