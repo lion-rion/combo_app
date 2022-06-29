@@ -21,9 +21,6 @@ Route::group(['middleware' => ['auth']], function() {
     //ブログ登録
     Route::post('/post/store', 'App\Http\Controllers\PostController@exeStore')->name('store');
     
-    //ブログ詳細画面を表示
-    Route::get('/post/{id}', 'App\Http\Controllers\PostController@showDetail')->name('show');
-    
     //ブログ編集
     Route::get('/post/edit/{id}', 'App\Http\Controllers\PostController@showEdit')->name('edit');
     //更新
@@ -44,8 +41,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/post/{comment_id}/comments','App\Http\Controllers\CommentsController@store');
 
     //コメント取消処理
-    Route::get('/comments/{comment_id}', 'App\Http\Controllers\CommentsController@destroy');
+        Route::get('/comments/{comment_id}', 'App\Http\Controllers\CommentsController@destroy');
     
 });
+
+//ブログ詳細画面を表示
+Route::get('/post/{id}', 'App\Http\Controllers\PostController@showDetail')->name('show');
 
 require __DIR__.'/auth.php';
