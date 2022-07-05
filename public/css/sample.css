@@ -1,4 +1,6 @@
 @media only screen and (max-width: 999px) {
+   
+
     /*---------margin専用css---------*/
 
     .post_info {
@@ -949,6 +951,13 @@
         margin-top: 20px;
     }
 
+    /*-----コメント欄設定------*/
+    #new_comment{
+        width: 100%;
+        background-color: white;
+        text-align: center;
+    }
+
 }
 /*-------------アンカー設定------------*/
 html {
@@ -963,4 +972,11 @@ html {
 
 #output {
     margin: 10px;
+}
+
+ /*バリデーションメッセージのcss*/
+.validation {
+    font-size: 0.8rem;
+    color: #FA5C65;
+    margin: 0.3rem;
 }
