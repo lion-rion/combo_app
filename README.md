@@ -9,6 +9,12 @@
 composer update
 ```
 
+コンポーザーのインストール //環境を更新しない場合はこちらを入力
+ 
+```
+composer install
+```
+
 .env ファイルの作成
 データベースの名前やパスワードなどを変更する
 
@@ -58,5 +64,5 @@ php artisan migrate
 
 ```
 php artisan storage:link
-
+chmod -R 777 storage
 ```
