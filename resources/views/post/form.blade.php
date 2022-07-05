@@ -39,12 +39,18 @@
                 </select>
             </div>
         </div>
+        @if ($errors->has('damage'))
+        <p class="validation">{{$errors->first('damage')}}</p>
+        @endif
         <div class="post_select_form">
             <p class="p_arange">ダメージ</p>
             <div class="damage_textarea">
                 <input class="normal_input" id="" name="damage" value="{{ old('damage') }}">
             </div> 
         </div>
+        @if ($errors->has('title'))
+        <p class="validation">{{$errors->first('title')}}</p>
+        @endif
         <div class="post_info">
             <p class="post_form_upper_p">タイトル</p>
             <input
@@ -53,6 +59,9 @@
                 placeholder="例 : 小梅式エイジス表裏"
                 value="{{ old('title') }}">
         </div>
+        @if ($errors->has('combo_content'))
+        <p class="validation">{{$errors->first('combo_content')}}</p>
+        @endif
         <div class="post_info">
                 <p class="post_form_upper_p">レシピ</p>
                 <textarea id="combo_content" name="combo_content" value="{{ old('combo_content') }}" type="text" placeholder="例 : 前ジャンプ→大k→中足→波動拳" ></textarea>
